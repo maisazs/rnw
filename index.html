@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./output.css" rel="stylesheet">
   <title>RNW</title>
+
+  <!--npx tailwindcss -i ./input.css -o ./output.css --watch-->
   <style>
     .menu-slide {
       transition: transform 0.3s ease-in-out;
@@ -15,13 +17,26 @@
     .menu-visible {
       transform: translateX(0);
     }
+    .typing {
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid;
+      animation: blink 0.7s steps(1) infinite;
+      vertical-align: middle;
+      /* line-height: normal; */
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
   </style>
 </head>
 <body class="bg-gray-2">
 
   <nav class="fixed z-20 md:mt-[50px] mt-[30px] w-full">
-    <div class="mx-[15px] flex justify-center max-w-screen-xl">
-      <div class="flex justify-between items-center container mx-auto bg-gray-3 bg-opacity-70 border-[2px] border-gray-4 rounded-[65px] h-[71px] px-[30px] backdrop-blur-sm">
+    <div class="mx-auto flex justify-center max-w-screen-xl">
+      <div class="flex justify-between items-center container mx-[15px] bg-gray-3 bg-opacity-70 border-[2px] border-gray-4 rounded-[65px] h-[71px] px-[30px] backdrop-blur-sm">
         <a href="#home"><img src="img/logo-nav.svg" alt="" class="md:scale-100 scale-75"></a>
         <button id="menu-toggle" class="block lg:hidden focus:outline-none">
           <span class="block w-6 h-0.5 bg-gray-5 mb-1"></span>
@@ -55,14 +70,20 @@
       <video class="absolute top-0 left-0 w-full h-full object-cover filter hue-rotate-[215deg] saturate-200 brightness-110 opacity-30" autoplay muted loop playsinline>
         <source src="videos/bg.mp4" type="video/mp4">
       </video>
-      <div class="h-full flex items-center justify-center relative z-10 container m-auto">
-        <div class="flex flex-col items-center justify-center text-center gap-[16px] w-[1040px]">
-          <h1 class="font-roobert font-normal md:text-[64px] text-[40px] text-gray-1">Design com <span class="text-primary-1 font-bold">Visão Estratégica</span> para o Futuro do seu Negócio</h1>
+      <div class="h-full flex flex-col gap-[100px] items-center justify-center relative z-10 w-[100%] pt-[10%]">
+        <div class="flex flex-col items-center justify-center text-center gap-[16px] lg:w-[1040px] md:w-[600px] w-[350px] mx-[15px] container">
+          <h1 class="font-roobert font-normal md:text-[64px] text-[40px] text-gray-1">
+            Design com <br class="md:hidden block"> <span class="text-primary-1 font-bold typing" id="dynamic-text">Visão Estratégica</span> <br class="md:hidden block"> para o Futuro do seu Negócio
+          </h1>
+          
           <p class="font-roobert font-normal md:text-[20px] text-[16px] text-gray-1">A qualidade da sua Landing Page reflete no valor que seus leads enxergarão a sua <br> oferta. Está na hora de ter a sua landing page</p>
           <a href="#" class="font-roobert font-medium md:text-[16px] text-[14px] text-gray-2 flex flex-row items-center gap-[10px] px-[30px] py-[10px] rounded-[24px] bg-primary-1 mt-[30px] hover:bg-white transition-colors duration-300" style="box-shadow: 0px 0px 35px -10px #d8fa2d;">
             <img src="img/zap.svg" alt="Whatsapp">
             Quero solicitar um orçamento.
           </a>
+        </div>
+        <div>
+          <img src="img/arrow-down.svg" alt="">
         </div>
       </div>
     </div>
@@ -75,6 +96,7 @@
   </main>
 
   <script>
+    //menu
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     const menuClose = document.getElementById('menu-close');
@@ -101,6 +123,44 @@
         mobileMenu.classList.remove('menu-visible');
       });
     });
+  </script>
+
+  <script>
+    //efeito maquina de escrever
+    const words = ["Visão Estratégica", "Qualidade", "Profissionalismo"];
+    const dynamicText = document.getElementById('dynamic-text');
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let delayAfterWord = 800;
+
+    function typeEffect() {
+      const currentWord = words[wordIndex];
+      const visibleText = currentWord.substring(0, charIndex);
+
+      dynamicText.textContent = visibleText;
+
+      if (!isDeleting && charIndex < currentWord.length) {
+        charIndex++;
+      } else if (isDeleting && charIndex > 0) {
+        charIndex--;
+      } else {
+        if (!isDeleting) {
+          setTimeout(() => {
+            isDeleting = true;
+            typeEffect();
+          }, delayAfterWord);
+          return;
+        } else {
+          isDeleting = false;
+          wordIndex = (wordIndex + 1) % words.length;
+        }
+      }
+
+      setTimeout(typeEffect, isDeleting ? 70 : 150);
+    }
+
+    typeEffect();
   </script>
 
 </body>

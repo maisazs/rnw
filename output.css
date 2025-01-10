@@ -671,8 +671,8 @@ video {
   right: 0px;
 }
 
-.right-6 {
-  right: 1.5rem;
+.right-4 {
+  right: 1rem;
 }
 
 .top-0 {
@@ -681,10 +681,6 @@ video {
 
 .top-4 {
   top: 1rem;
-}
-
-.right-4 {
-  right: 1rem;
 }
 
 .isolate {
@@ -765,6 +761,11 @@ video {
   margin-right: auto;
 }
 
+.mx-\[15\] {
+  margin-left: 15;
+  margin-right: 15;
+}
+
 .mb-1 {
   margin-bottom: 0.25rem;
 }
@@ -773,20 +774,8 @@ video {
   margin-top: 0.5rem;
 }
 
-.mt-\[20px\] {
-  margin-top: 20px;
-}
-
 .mt-\[30px\] {
   margin-top: 30px;
-}
-
-.mt-\[50px\] {
-  margin-top: 50px;
-}
-
-.mt-\[\] {
-  margin-top: ;
 }
 
 .box-border {
@@ -934,6 +923,30 @@ video {
 
 .w-screen {
   width: 100vw;
+}
+
+.w-\[\] {
+  width: ;
+}
+
+.w-\[800px\] {
+  width: 800px;
+}
+
+.w-\[100\] {
+  width: 100;
+}
+
+.w-\[100\%\] {
+  width: 100%;
+}
+
+.w-\[350\] {
+  width: 350;
+}
+
+.w-\[350px\] {
+  width: 350px;
 }
 
 .max-w-screen-xl {
@@ -1462,6 +1475,10 @@ video {
 
 .justify-items-stretch {
   justify-items: stretch;
+}
+
+.gap-\[100px\] {
+  gap: 100px;
 }
 
 .gap-\[10px\] {
@@ -2126,6 +2143,10 @@ video {
   padding-bottom: 10px;
 }
 
+.pt-\[10\%\] {
+  padding-top: 10%;
+}
+
 .text-left {
   text-align: left;
 }
@@ -2186,6 +2207,11 @@ video {
   font-family: Roobert, sans-serif;
 }
 
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
 .text-\[14px\] {
   font-size: 14px;
 }
@@ -2200,15 +2226,6 @@ video {
 
 .text-\[40px\] {
   font-size: 40px;
-}
-
-.text-\[50px\] {
-  font-size: 50px;
-}
-
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
 }
 
 .font-bold {
@@ -2289,6 +2306,10 @@ video {
 .stacked-fractions {
   --tw-numeric-fraction: stacked-fractions;
   font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction);
+}
+
+.leading-\[1\.2\] {
+  line-height: 1.2;
 }
 
 .text-\[\#336699\]\/\[\.35\] {
@@ -2855,6 +2876,10 @@ video {
 }
 
 @media (min-width: 640px) {
+  .sm\:hidden {
+    display: none;
+  }
+
   .sm\:underline {
     text-decoration-line: underline;
   }
@@ -2863,6 +2888,14 @@ video {
 @media (min-width: 768px) {
   .md\:mt-\[50px\] {
     margin-top: 50px;
+  }
+
+  .md\:hidden {
+    display: none;
+  }
+
+  .md\:w-\[600px\] {
+    width: 600px;
   }
 
   .md\:scale-100 {
@@ -2891,6 +2924,10 @@ video {
 
   .lg\:hidden {
     display: none;
+  }
+
+  .lg\:w-\[1040px\] {
+    width: 1040px;
   }
 }
 
