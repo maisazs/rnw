@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+
+  <!--npx tailwindcss -i ./input.css -o ./output.css --watch-->
+  <title>RNW</title>
+</head>
+<body class="bg-gray-2">
+  <header class="overflow-hidden">
+    <div class="relative w-[100vw] h-[100vh] overflow-hidden">
+        <video class="absolute top-0 left-0 w-[100vw] h-[100vh] object-cover filter hue-rotate-[215deg] saturate-200 brightness-110 opacity-30" autoplay muted loop playsinline>
+            <source src="videos/bg.mp4" type="video/mp4">
+        </video>
+
+        <div class="h-[100vh] flex items-center justify-center relative z-10 container m-auto">
+            <div class="flex flex-col items-center justify-center text-center gap-[16px] w-[1040px]">
+                <h1 class="font-roobert font-normal md:text-[64px] text-[40px] text-gray-1">Design com <span class="text-primary-1 font-bold">Visão Estratégica</span> para o Futuro do seu Negócio</h1>
+                <p class="font-roobert font-normal md:text-[20px] text-[16px] text-gray-1">A qualidade da sua Landing Page reflete no valor que seus leads enxergarão a sua <br> oferta. Está na hora de ter a sua landing page</p>
+                <a href="#" class="font-roobert font-medium md:text-[16px] text-[14px] text-gray-2 flex flex-row items-center gap-[10px] px-[30px] py-[10px] rounded-[24px] bg-primary-1 mt-[30px] hover:bg-white transition-colors duration-300" style="box-shadow: 0px 0px 35px -10px #d8fa2d;">
+                    <img src="img/zap.svg" alt="">
+                    Quero solicitar um orçamento.
+                </a>
+            </div>
+        </div>
+    </div>
+  </header>
+
+  <main class="h-[100vh]"></main>
+</body>
