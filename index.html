@@ -1,21 +1,34 @@
 <!doctype html>
-<html>
+<html class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./output.css" rel="stylesheet">
-
   <title>RNW</title>
-
-  <!--npx tailwindcss -i ./input.css -o ./output.css --watch-->
+  <style>
+    .menu-slide {
+      transition: transform 0.3s ease-in-out;
+    }
+    .menu-hidden {
+      transform: translateX(100%);
+    }
+    .menu-visible {
+      transform: translateX(0);
+    }
+  </style>
 </head>
 <body class="bg-gray-2">
 
-  <nav class="fixed z-20 mt-[50px] w-[100%]">
+  <nav class="fixed z-20 md:mt-[50px] mt-[20px] w-full">
     <div class="mx-auto flex justify-center max-w-screen-xl">
       <div class="flex justify-between items-center container mx-auto bg-gray-3 bg-opacity-70 border-[2px] border-gray-4 rounded-[65px] h-[71px] px-[30px] backdrop-blur-sm">
-        <img src="img/logo-nav.svg" alt="">
-        <div class=" flex flex-row gap-[30px] items-center">
+        <a href="#home"><img src="img/logo-nav.svg" alt="" class="md:scale-100 scale-75"></a>
+        <button id="menu-toggle" class="block lg:hidden focus:outline-none">
+          <span class="block w-6 h-0.5 bg-gray-5 mb-1"></span>
+          <span class="block w-6 h-0.5 bg-gray-5 mb-1"></span>
+          <span class="block w-6 h-0.5 bg-gray-5"></span>
+        </button>
+        <div id="menu" class="hidden lg:flex flex-row gap-[30px] items-center">
           <a href="#home" class="font-roobert font-normal text-[16px] text-gray-5 hover:text-white transition-colors duration-300">Home</a>
           <a href="#projetos" class="font-roobert font-normal text-[16px] text-gray-5 hover:text-white transition-colors duration-300">Nossos projetos</a>
           <a href="#processos" class="font-roobert font-normal text-[16px] text-gray-5 hover:text-white transition-colors duration-300">Processos</a>
@@ -26,13 +39,23 @@
     </div>
   </nav>
 
-  <header class="relative w-[100vw] h-[100vh] overflow-hidden">
-    <div class="relative w-[100vw] h-[100vh] overflow-hidden">
-      <video class="absolute top-0 left-0 w-[100vw] h-[100vh] object-cover filter hue-rotate-[215deg] saturate-200 brightness-110 opacity-30" autoplay muted loop playsinline>
+  <div id="mobile-menu" class="fixed top-0 right-0 w-screen h-screen bg-primary-1 menu-slide menu-hidden lg:hidden z-30">
+    <button id="menu-close" class="absolute top-4 right-6 text-white text-[50px] focus:outline-none">&times;</button>
+    <div class="flex flex-col items-center justify-center h-full gap-[30px]">
+      <a href="#home" class="font-roobert font-normal text-[24px] text-white hover:text-gray-2 transition-colors duration-300">Home</a>
+      <a href="#projetos" class="font-roobert font-normal text-[24px] text-white hover:text-gray-2 transition-colors duration-300">Nossos projetos</a>
+      <a href="#processos" class="font-roobert font-normal text-[24px] text-white hover:text-gray-2 transition-colors duration-300">Processos</a>
+      <a href="#oferta" class="font-roobert font-normal text-[24px] text-white hover:text-gray-2 transition-colors duration-300">O que oferecemos</a>
+      <a href="#" class="font-roobert font-normal text-[24px] text-gray-2 hover:text-primary-1 transition-colors duration-300 px-[20px] py-[10px] bg-white rounded-[32px]">Entre em contato</a>
+    </div>
+  </div>
+
+  <header id="home" class="relative w-full h-[100vh] overflow-hidden">
+    <div class="relative w-full h-full overflow-hidden">
+      <video class="absolute top-0 left-0 w-full h-full object-cover filter hue-rotate-[215deg] saturate-200 brightness-110 opacity-30" autoplay muted loop playsinline>
         <source src="videos/bg.mp4" type="video/mp4">
       </video>
-
-      <div class="h-[100vh] flex items-center justify-center relative z-10 container m-auto">
+      <div class="h-full flex items-center justify-center relative z-10 container m-auto">
         <div class="flex flex-col items-center justify-center text-center gap-[16px] w-[1040px]">
           <h1 class="font-roobert font-normal md:text-[64px] text-[40px] text-gray-1">Design com <span class="text-primary-1 font-bold">Visão Estratégica</span> para o Futuro do seu Negócio</h1>
           <p class="font-roobert font-normal md:text-[20px] text-[16px] text-gray-1">A qualidade da sua Landing Page reflete no valor que seus leads enxergarão a sua <br> oferta. Está na hora de ter a sua landing page</p>
@@ -45,6 +68,32 @@
     </div>
   </header>
 
-  <main class="h-[100vh]"></main>
+  <main>
+    <section id="projetos" class="h-[100vh] bg-blue-500"></section>
+    <section id="processos" class="h-[100vh] bg-green-500"></section>
+    <section id="oferta" class="h-[100vh] bg-red-500"></section>
+  </main>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuClose = document.getElementById('menu-close');
+
+    menuToggle.addEventListener('click', () => {
+      if (mobileMenu.classList.contains('menu-hidden')) {
+        mobileMenu.classList.remove('menu-hidden');
+        mobileMenu.classList.add('menu-visible');
+      } else {
+        mobileMenu.classList.add('menu-hidden');
+        mobileMenu.classList.remove('menu-visible');
+      }
+    });
+
+    menuClose.addEventListener('click', () => {
+      mobileMenu.classList.add('menu-hidden');
+      mobileMenu.classList.remove('menu-visible');
+    });
+  </script>
+
 </body>
 </html>
