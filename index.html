@@ -43,6 +43,35 @@
   .arrow-down {
     animation: float 2s infinite ease-in-out;
   }
+
+  .hover-line {
+  position: relative;
+  overflow: hidden; /* Para esconder a linha fora dos limites do container */
+}
+
+.hover-line::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -200%;
+  width: 200%;
+  height: 20px; /* Espessura da linha */
+  background-color: #ffffff09; /* Cor da linha */
+  transform: rotate(-45deg); /* Define a linha na diagonal */
+  transition: all 1s ease;
+  z-index: 0; /* Certifique-se de que a linha está atrás do conteúdo */
+}
+
+.hover-line:hover::before {
+  left: 200%; /* Move a linha para atravessar o centro do container */
+  transform: translateX(-50%) rotate(-45deg);
+}
+
+.hover-line > * {
+  position: relative; /* Coloca o conteúdo acima da linha */
+  z-index: 1;
+}
+
   </style>
 </head>
 <body class="bg-gray-2">
@@ -61,7 +90,7 @@
           <a href="#projetos" class="font-roobert font-normal text-[16px] text-gray-5 hover:text-white transition-colors duration-300">Nossos projetos</a>
           <a href="#processos" class="font-roobert font-normal text-[16px] text-gray-5 hover:text-white transition-colors duration-300">Processos</a>
           <a href="#oferta" class="font-roobert font-normal text-[16px] text-gray-5 hover:text-white transition-colors duration-300">O que oferecemos</a>
-          <a href="#" class="font-roobert font-normal text-[16px] text-gray-2 hover:bg-primary-1 transition-colors duration-300 px-[20px] py-[10px] bg-white rounded-[32px]">Entre em contato</a>
+          <a href="#" class="font-roobert font-medium text-[16px] text-gray-2 hover:bg-primary-1 transition-colors duration-300 px-[20px] py-[10px] bg-white rounded-[32px]">Entre em contato</a>
         </div>
       </div>
     </div>
@@ -110,15 +139,19 @@
       <div class="container mx-[15px] max-w-screen-lg flex flex-col items-center justify-center gap-[50px]">
         <h2 class="font-roobert font-normal text-white text-[32px] text-center">Porque escolher a <span class="text-primary-1 font-semibold">RNW Studio</span></h2>
         <div class=" grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-[10px] container group">
-          <div class="bg-gray-8 hover:bg-gray-3 rounded-[14px] px-[40px] py-[55px] hover:scale-[102%] group-hover:not-hover:blur-sm transition-all duration-300 mx-auto max-w-[350px]">
+          <div class="relative bg-gray-8 hover:bg-gray-3 rounded-[14px] px-[40px] py-[55px] hover:scale-[102%] group-hover:not-hover:blur-sm transition-all duration-300 mx-auto max-w-[350px] hover-line">
             <div class="flex flex-row justify-between">
-              <h3 class="font-roobert font-semibold text-white text-[29px]">Projetos <br><span class="text-primary-1">personalizados</span></h3>
+              <h3 class="font-roobert font-semibold text-white text-[29px]">
+                Projetos <br><span class="text-primary-1">personalizados</span>
+              </h3>
               <p class="font-roobert font-normal text-gray-6 text-[16px] mt-[-35px] mr-[-15px]">01</p>
             </div>
-            <p class="font-roobert font-normal text-gray-7 text-[16px] mt-[13px]">Não entregamos apenas telas, entregamos experiências direcionadas para o objetivo do seu negócio.</p>
+            <p class="font-roobert font-normal text-gray-7 text-[16px] mt-[13px]">
+              Não entregamos apenas telas, entregamos experiências direcionadas para o objetivo do seu negócio.
+            </p>
           </div>
 
-          <div class="bg-gray-8 hover:bg-gray-3 rounded-[14px] px-[40px] py-[55px] hover:scale-[102%] group-hover:not-hover:blur-sm transition-all duration-300 max-w-[350px] mx-auto">
+          <div class="relative bg-gray-8 hover:bg-gray-3 rounded-[14px] px-[40px] py-[55px] hover:scale-[102%] group-hover:not-hover:blur-sm transition-all duration-300 mx-auto max-w-[350px] hover-line">
             <div class="flex flex-row justify-between">
               <h3 class="font-roobert font-semibold text-primary-1 text-[29px]">Estratégia <br><span class="text-white">Digital</span></h3>
               <p class="font-roobert font-normal text-gray-6 text-[16px] mt-[-35px] mr-[-15px]">02</p>
@@ -126,7 +159,7 @@
             <p class="font-roobert font-normal text-gray-7 text-[16px] mt-[13px]">Não entregamos apenas telas, entregamos experiências direcionadas para o objetivo do seu negócio.</p>
           </div>
 
-          <div class="bg-gray-8 hover:bg-gray-3 rounded-[14px] px-[40px] py-[55px] hover:scale-[102%] group-hover:not-hover:blur-sm transition-all duration-300 max-w-[350px] mx-auto">
+          <div class="relative bg-gray-8 hover:bg-gray-3 rounded-[14px] px-[40px] py-[55px] hover:scale-[102%] group-hover:not-hover:blur-sm transition-all duration-300 mx-auto max-w-[350px] hover-line">
             <div class="flex flex-row justify-between">
               <h3 class="font-roobert font-semibold text-white text-[29px]">Acompanhamento <br><span class="text-primary-1">personalizado</span></h3>
               <p class="font-roobert font-normal text-gray-6 text-[16px] mt-[-35px] mr-[-15px]">03</p>
@@ -134,7 +167,7 @@
             <p class="font-roobert font-normal text-gray-7 text-[16px] mt-[13px]">Não entregamos apenas telas, entregamos experiências direcionadas para o objetivo do seu negócio.</p>
           </div>
 
-          <div class="bg-gray-8 hover:bg-gray-3 rounded-[14px] px-[40px] py-[55px] hover:scale-[102%] group-hover:not-hover:blur-sm transition-all duration-300 max-w-[350px] mx-auto">
+          <div class="relative bg-gray-8 hover:bg-gray-3 rounded-[14px] px-[40px] py-[55px] hover:scale-[102%] group-hover:not-hover:blur-sm transition-all duration-300 mx-auto max-w-[350px] hover-line">
             <div class="flex flex-row justify-between">
               <h3 class="font-roobert font-semibold text-primary-1 text-[29px]">Projetos <br><span class="text-white">personalizados</span></h3>
               <p class="font-roobert font-normal text-gray-6 text-[16px] mt-[-35px] mr-[-15px]">04</p>
@@ -142,7 +175,7 @@
             <p class="font-roobert font-normal text-gray-7 text-[16px] mt-[13px]">Não entregamos apenas telas, entregamos experiências direcionadas para o objetivo do seu negócio.</p>
           </div>
 
-          <div class="bg-gray-8 hover:bg-gray-3 rounded-[14px] px-[40px] py-[55px] hover:scale-[102%] group-hover:not-hover:blur-sm transition-all duration-300 max-w-[350px] mx-auto">
+          <div class="relative bg-gray-8 hover:bg-gray-3 rounded-[14px] px-[40px] py-[55px] hover:scale-[102%] group-hover:not-hover:blur-sm transition-all duration-300 mx-auto max-w-[350px] hover-line">
             <div class="flex flex-row justify-between">
               <h3 class="font-roobert font-semibold text-white text-[29px]">Projetos <br><span class="text-primary-1">personalizados</span></h3>
               <p class="font-roobert font-normal text-gray-6 text-[16px] mt-[-35px] mr-[-15px]">05</p>
@@ -150,7 +183,7 @@
             <p class="font-roobert font-normal text-gray-7 text-[16px] mt-[13px]">Não entregamos apenas telas, entregamos experiências direcionadas para o objetivo do seu negócio.</p>
           </div>
 
-          <div class="bg-gray-8 hover:bg-gray-3 rounded-[14px] px-[40px] py-[55px] hover:scale-[102%] group-hover:not-hover:blur-sm transition-all duration-300 max-w-[350px] mx-auto">
+          <div class="relative bg-gray-8 hover:bg-gray-3 rounded-[14px] px-[40px] py-[55px] hover:scale-[102%] group-hover:not-hover:blur-sm transition-all duration-300 mx-auto max-w-[350px] hover-line">
             <div class="flex flex-row justify-between">
               <h3 class="font-roobert font-semibold text-primary-1 text-[29px]">Projetos <br><span class="text-white">personalizados</span></h3>
               <p class="font-roobert font-normal text-gray-6 text-[16px] mt-[-35px] mr-[-15px]">06</p>
