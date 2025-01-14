@@ -16,11 +16,18 @@ module.exports = {
         'gray-3': '#101010',
         'gray-4': '#111111',
         'gray-5': '#696969',
+        'gray-6': '#6E6E6E',
+        'gray-7': '#868686',
+        'gray-8': '#1A1A1A',
 
         'primary-1': '#D8FA2D',
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addVariant }) {
+      addVariant('not-hover', '&:not(:hover)');
+    },
+  ],
 }
 
