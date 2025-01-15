@@ -354,7 +354,7 @@
 
   <script>
     //efeito maquina de escrever
-    const words = ["Visão Estratégica", "Qualidade", "Profissionalismo"];
+    const words = ["Visão Estratégica", "Qualidade", "Profissionalismo", "Personalidade"];
     const dynamicText = document.getElementById('dynamic-text');
     let wordIndex = 0;
     let charIndex = 0;
@@ -470,25 +470,24 @@
   </script>
 
   <script>
-    // Primeira linha (movendo para a direita)
+    //efeito scroll
     gsap.to(".row1", {
-      x: "50%", // Ajusta o movimento para que o conteúdo não desapareça
+      x: "50%",
       scrollTrigger: {
         trigger: ".row1",
-        start: "top bottom", // Quando a seção entra na tela
-        end: "bottom top",   // Quando a seção sai da tela
-        scrub: true, // Sincroniza com o scroll
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true, 
       },
     });
 
-    // Segunda linha (movendo para a esquerda)
     gsap.to(".row2", {
-      x: "-50%", // Ajusta o movimento para que o conteúdo não desapareça
+      x: "-50%",
       scrollTrigger: {
         trigger: ".row2",
-        start: "top bottom", // Quando a seção entra na tela
-        end: "bottom top",   // Quando a seção sai da tela
-        scrub: true, // Sincroniza com o scroll
+        start: "top bottom", 
+        end: "bottom top",   
+        scrub: true,
       },
     });
   </script>
