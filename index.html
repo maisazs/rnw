@@ -17,6 +17,21 @@
 
   <!--npx tailwindcss -i ./input.css -o ./output.css --watch-->
   <style>
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: #D8FA2D;
+        border-radius: 10px;
+        margin-left: -5px;
+
+    }
+
     .menu-slide {
       transition: transform 0.3s ease-in-out;
     }
@@ -114,7 +129,7 @@
 
   .card-open {
     background: #d8fa2d;
-    width: 24%;
+    max-width: 280px;
   }
 
   .card-close {
@@ -537,6 +552,28 @@
         </div>
       </div>
     </section>
+
+    <section class="container max-w-screen-xl mx-auto pt-[200px] flex flex-col items-center">
+      <div class="flex flex-col items-center mx-[15px] w-[100%]"">
+        <div class="flex flex-row justify-between items-center w-[100%]">
+          <div class="flex flex-col items-start gap-[5px] max-w-[520px]">
+            <h2 class="font-roobert font-normal text-[32px] text-white text-start">Algumas <span class="text-primary-1">pessoas que foram impactadas</span> por nossos projetos</h2>
+            <p class="font-roobert font-normal text-[16px] text-gray-6 text-start">Faça seu lançamento bater múltiplos 6 e 7 dígitos com nosso sistema validado que já lançou os maiores players do mercado digital.</p>
+          </div>
+
+          <div>
+            <img src="img/logo-lg.svg" alt="Logo">
+          </div>
+        </div>
+
+        <div class="flex flex-row justify-between items-center w-[100%] gap-[7px] pt-[70px]">
+          <div class="w-[25%] h-[384px] bg-gray-16 rounded-[9px]"></div>
+          <div class="w-[25%] h-[384px] bg-gray-16 rounded-[9px]"></div>
+          <div class="w-[25%] h-[384px] bg-gray-16 rounded-[9px]"></div>
+          <div class="w-[25%] h-[384px] bg-gray-16 rounded-[9px]"></div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <script>
@@ -753,72 +790,63 @@
   </script>
 
   <script>
-// Seleciona todos os cartões
-const cards = document.querySelectorAll('.card-open, .card-close');
+    //cartões de passos
+    const cards = document.querySelectorAll('.card-open, .card-close');
 
-// Adiciona um listener de clique a cada cartão
-cards.forEach(card => {
-  card.addEventListener('click', () => {
-    // Fecha todos os outros cartões
-    cards.forEach(otherCard => {
-      if (otherCard !== card && otherCard.classList.contains('card-open')) {
-        otherCard.style.transition = 'width 0.5s ease-in-out';
-        otherCard.style.width = '200px'; // Largura do estado "fechado"
-        setTimeout(() => {
-          otherCard.classList.remove('card-open');
-          otherCard.classList.add('card-close');
-          toggleRelatedClasses(otherCard, 'open', 'close');
-        }, 500);
-      }
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        cards.forEach(otherCard => {
+          if (otherCard !== card && otherCard.classList.contains('card-open')) {
+            otherCard.style.transition = 'width 0.5s ease-in-out';
+            otherCard.style.width = '200px'; 
+            setTimeout(() => {
+              otherCard.classList.remove('card-open');
+              otherCard.classList.add('card-close');
+              toggleRelatedClasses(otherCard, 'open', 'close');
+            }, 500);
+          }
+        });
+
+        if (card.classList.contains('card-open')) {
+          card.style.transition = 'width 0.5s ease-in-out';
+          card.style.width = '200px';
+          setTimeout(() => {
+            card.classList.remove('card-open');
+            card.classList.add('card-close');
+            toggleRelatedClasses(card, 'open', 'close');
+          }, 500);
+        } else if (card.classList.contains('card-close')) {
+          card.style.transition = 'width 0.5s ease-in-out';
+          card.style.width = '280px';
+          setTimeout(() => {
+            card.classList.remove('card-close');
+            card.classList.add('card-open');
+            toggleRelatedClasses(card, 'close', 'open');
+          }, 500);
+        }
+      });
     });
 
-    // Alterna o estado do cartão clicado
-    if (card.classList.contains('card-open')) {
-      // Troca para "fechado"
-      card.style.transition = 'width 0.5s ease-in-out';
-      card.style.width = '200px'; // Largura do estado "fechado"
-      setTimeout(() => {
-        card.classList.remove('card-open');
-        card.classList.add('card-close');
-        toggleRelatedClasses(card, 'open', 'close');
-      }, 500);
-    } else if (card.classList.contains('card-close')) {
-      // Troca para "aberto"
-      card.style.transition = 'width 0.5s ease-in-out';
-      card.style.width = '400px'; // Largura do estado "aberto"
-      setTimeout(() => {
-        card.classList.remove('card-close');
-        card.classList.add('card-open');
-        toggleRelatedClasses(card, 'close', 'open');
-      }, 500);
+    function toggleRelatedClasses(card, from, to) {
+      const relatedClasses = [
+        'card-num-',
+        'passo-t-',
+        'card-txt-',
+        'passo-f-'
+      ];
+
+      relatedClasses.forEach(baseClass => {
+        const elements = card.querySelectorAll(`[class*="${baseClass}${from}"]`);
+        elements.forEach(element => {
+          const currentClass = element.className.match(new RegExp(`${baseClass}${from}`));
+          if (currentClass) {
+            const newClass = currentClass[0].replace(from, to);
+            element.classList.remove(currentClass[0]);
+            element.classList.add(newClass);
+          }
+        });
+      });
     }
-  });
-});
-
-// Função para alternar classes relacionadas
-function toggleRelatedClasses(card, from, to) {
-  const relatedClasses = [
-    'card-num-',
-    'passo-t-',
-    'card-txt-',
-    'passo-f-'
-  ];
-
-  relatedClasses.forEach(baseClass => {
-    const elements = card.querySelectorAll(`[class*="${baseClass}${from}"]`);
-    elements.forEach(element => {
-      const currentClass = element.className.match(new RegExp(`${baseClass}${from}`));
-      if (currentClass) {
-        const newClass = currentClass[0].replace(from, to);
-        element.classList.remove(currentClass[0]);
-        element.classList.add(newClass);
-      }
-    });
-  });
-}
-
-
-
   </script>
 </body>
 </html>
