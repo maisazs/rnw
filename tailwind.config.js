@@ -10,6 +10,7 @@ module.exports = {
       colors: {
         'white': '#fff',
         'white-2': '#F9FAF3',
+        'white-3': '#D1D1D1',
         'black': '#000',
 
         'gray-1': '#9E9E9E',
@@ -22,6 +23,10 @@ module.exports = {
         'gray-8': '#1A1A1A',
         'gray-9': '#3F3F3F',
         'gray-10': '#1C1C1C',
+        'gray-11': '#202020',
+        'gray-12': '#0D0D0D',
+        'gray-13': '#7A7A7A',
+        'gray-14': '#2B2B2B',
 
         'primary-1': '#D8FA2D',
       },

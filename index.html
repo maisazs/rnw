@@ -9,6 +9,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/split-type"></script>
+
   <title>RNW</title>
 
   <!--npx tailwindcss -i ./input.css -o ./output.css --watch-->
@@ -103,6 +107,10 @@
     pointer-events: none;
     z-index: 1;
   }
+
+  .gradiente-gray {
+    background: linear-gradient(to right, #050505, transparent, #050505);
+  }
   </style>
 </head>
 <body class="bg-gray-2">
@@ -166,11 +174,13 @@
   </header>
 
   <main>
-    <section id="processos" class="dm:py-[150px] py-[80px] bg-gray-2 flex items-center justify-center">
+    <section id="processos" class="dm:py-[150px] py-[80px] bg-gray-2 flex items-center justify-center relative overflow-hidden">
       <div class="container mx-[15px] max-w-screen-lg flex flex-col items-center justify-center gap-[50px]">
-        <h2 class="font-roobert font-normal text-white text-[32px] text-center">Porque escolher a <span class="text-primary-1 font-semibold">RNW Studio</span></h2>
+        <h2 class="font-roobert font-normal text-white text-[32px] text-center">
+          Porque escolher a <span class="text-primary-1 font-semibold">RNW Studio</span>
+        </h2>
         <div class=" grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-[10px] container group">
-          <div class="relative bg-gray-8 hover:bg-gray-3 rounded-[14px] px-[40px] py-[55px] hover:scale-[102%] group-hover:not-hover:blur-sm transition-all duration-300 mx-auto max-w-[350px] hover-line">
+          <div class="relative bg-gray-8 hover:bg-gray-3 rounded-[14px] px-[40px] py-[55px] hover:scale-[102%] group-hover:not-hover:blur-sm group-hover:not-hover:scale-[98%] transition-all duration-300 mx-auto max-w-[350px] hover-line">
             <div class="flex flex-row justify-between">
               <h3 class="font-roobert font-semibold text-white text-[29px]">
                 Projetos <br><span class="text-primary-1">personalizados</span>
@@ -182,7 +192,7 @@
             </p>
           </div>
 
-          <div class="relative bg-gray-8 hover:bg-gray-3 rounded-[14px] px-[40px] py-[55px] hover:scale-[102%] group-hover:not-hover:blur-sm transition-all duration-300 mx-auto max-w-[350px] hover-line">
+          <div class="relative bg-gray-8 hover:bg-gray-3 rounded-[14px] px-[40px] py-[55px] hover:scale-[102%] group-hover:not-hover:blur-sm group-hover:not-hover:scale-[98%] transition-all duration-300 mx-auto max-w-[350px] hover-line">
             <div class="flex flex-row justify-between">
               <h3 class="font-roobert font-semibold text-primary-1 text-[29px]">Estratégia <br><span class="text-white">Digital</span></h3>
               <p class="font-roobert font-normal text-gray-6 text-[16px] mt-[-35px] mr-[-15px]">02</p>
@@ -190,7 +200,7 @@
             <p class="font-roobert font-normal text-gray-7 text-[16px] mt-[13px]">Não entregamos apenas telas, entregamos experiências direcionadas para o objetivo do seu negócio.</p>
           </div>
 
-          <div class="relative bg-gray-8 hover:bg-gray-3 rounded-[14px] px-[40px] py-[55px] hover:scale-[102%] group-hover:not-hover:blur-sm transition-all duration-300 mx-auto max-w-[350px] hover-line">
+          <div class="relative bg-gray-8 hover:bg-gray-3 rounded-[14px] px-[40px] py-[55px] hover:scale-[102%] group-hover:not-hover:blur-sm group-hover:not-hover:scale-[98%] transition-all duration-300 mx-auto max-w-[350px] hover-line">
             <div class="flex flex-row justify-between">
               <h3 class="font-roobert font-semibold text-white text-[29px]">Acompanhamento <br><span class="text-primary-1">personalizado</span></h3>
               <p class="font-roobert font-normal text-gray-6 text-[16px] mt-[-35px] mr-[-15px]">03</p>
@@ -198,7 +208,7 @@
             <p class="font-roobert font-normal text-gray-7 text-[16px] mt-[13px]">Não entregamos apenas telas, entregamos experiências direcionadas para o objetivo do seu negócio.</p>
           </div>
 
-          <div class="relative bg-gray-8 hover:bg-gray-3 rounded-[14px] px-[40px] py-[55px] hover:scale-[102%] group-hover:not-hover:blur-sm transition-all duration-300 mx-auto max-w-[350px] hover-line">
+          <div class="relative bg-gray-8 hover:bg-gray-3 rounded-[14px] px-[40px] py-[55px] hover:scale-[102%] group-hover:not-hover:blur-sm group-hover:not-hover:scale-[98%] transition-all duration-300 mx-auto max-w-[350px] hover-line">
             <div class="flex flex-row justify-between">
               <h3 class="font-roobert font-semibold text-primary-1 text-[29px]">Projetos <br><span class="text-white">personalizados</span></h3>
               <p class="font-roobert font-normal text-gray-6 text-[16px] mt-[-35px] mr-[-15px]">04</p>
@@ -206,7 +216,7 @@
             <p class="font-roobert font-normal text-gray-7 text-[16px] mt-[13px]">Não entregamos apenas telas, entregamos experiências direcionadas para o objetivo do seu negócio.</p>
           </div>
 
-          <div class="relative bg-gray-8 hover:bg-gray-3 rounded-[14px] px-[40px] py-[55px] hover:scale-[102%] group-hover:not-hover:blur-sm transition-all duration-300 mx-auto max-w-[350px] hover-line">
+          <div class="relative bg-gray-8 hover:bg-gray-3 rounded-[14px] px-[40px] py-[55px] hover:scale-[102%] group-hover:not-hover:blur-sm group-hover:not-hover:scale-[98%] transition-all duration-300 mx-auto max-w-[350px] hover-line">
             <div class="flex flex-row justify-between">
               <h3 class="font-roobert font-semibold text-white text-[29px]">Projetos <br><span class="text-primary-1">personalizados</span></h3>
               <p class="font-roobert font-normal text-gray-6 text-[16px] mt-[-35px] mr-[-15px]">05</p>
@@ -214,7 +224,7 @@
             <p class="font-roobert font-normal text-gray-7 text-[16px] mt-[13px]">Não entregamos apenas telas, entregamos experiências direcionadas para o objetivo do seu negócio.</p>
           </div>
 
-          <div class="relative bg-gray-8 hover:bg-gray-3 rounded-[14px] px-[40px] py-[55px] hover:scale-[102%] group-hover:not-hover:blur-sm transition-all duration-300 mx-auto max-w-[350px] hover-line">
+          <div class="relative bg-gray-8 hover:bg-gray-3 rounded-[14px] px-[40px] py-[55px] hover:scale-[102%] group-hover:not-hover:blur-sm group-hover:not-hover:scale-[98%] transition-all duration-300 mx-auto max-w-[350px] hover-line">
             <div class="flex flex-row justify-between">
               <h3 class="font-roobert font-semibold text-primary-1 text-[29px]">Projetos <br><span class="text-white">personalizados</span></h3>
               <p class="font-roobert font-normal text-gray-6 text-[16px] mt-[-35px] mr-[-15px]">06</p>
@@ -317,7 +327,58 @@
           </div>
         </div>
 
-        <div class="w-[100vw] h-[200px] mt-[-200px] bg-gradient-to-r from-gray-2 via-transparent to-gray-2 z-[10]"></div>
+        <div class="w-[100vw] h-[200px] mt-[-200px] z-[10] gradiente-gray"></div>
+      </div>
+
+      <div class="container flex flex-col mt-[200px] items-center justify-center mx-auto max-w-screen-xl gap-[50px]">
+        <h2 class="scroll-highlight text-center font-roobert font-medium text-[72px] text-gray-11 mx-[15px]">Chegou a hora de alavancar os resultados do seu negócio.</h2>
+
+        <div class="flex flex-col justify-center items-center gap-[30px] bg-gray-12 rounded-[37px] w-[100%] py-[100px]">
+          <h3 class="font-roobert font-normal text-[32px] text-white">O que <span class="text-primary-1">oferecemos</span></h3>
+          <div class="w-[70%]">
+            <div class="w-[100%] py-[25px] border-b-[1px] border-b-gray-14 cursor-pointer flex items-center justify-center mx-auto" onclick="toggleVisibility(this)">
+              <div class="flex flex-col items-start justify-center gap-[5px] w-[90%]">
+                <h4 class="font-roobert font-semibold text-[16px] text-white uppercase">Desenvolvimento de infoprodutos</h4>
+                <p class="font-roobert font-normal text-[16px] text-gray-13">Toda a identidade visual do seu produto ou curso, área de membros da plataforma, página de captação, criativos de divulgação</p>
+              </div>
+            </div>
+            
+            <div class="w-[100%] py-[25px] border-b-[1px] border-b-gray-14 cursor-pointer flex items-center justify-center mx-auto" onclick="toggleVisibility(this)">
+              <div class="flex flex-col items-start justify-center gap-[5px] w-[90%]">
+                <h4 class="font-roobert font-semibold text-[16px] text-white uppercase">Desenvolvimento de infoprodutos</h4>
+                <p class="font-roobert font-normal text-[16px] text-gray-13 hidden">Toda a identidade visual do seu produto ou curso, área de membros da plataforma, página de captação, criativos de divulgação</p>
+              </div>
+            </div>
+        
+            <div class="w-[100%] py-[25px] border-b-[1px] border-b-gray-14 cursor-pointer flex items-center justify-center mx-auto" onclick="toggleVisibility(this)">
+              <div class="flex flex-col items-start justify-center gap-[5px] w-[90%]">
+                <h4 class="font-roobert font-semibold text-[16px] text-white uppercase">Desenvolvimento de infoprodutos</h4>
+                <p class="font-roobert font-normal text-[16px] text-gray-13 hidden">Toda a identidade visual do seu produto ou curso, área de membros da plataforma, página de captação, criativos de divulgação</p>
+              </div>
+            </div>
+        
+            <div class="w-[100%] py-[25px] border-b-[1px] border-b-gray-14 cursor-pointer flex items-center justify-center mx-auto" onclick="toggleVisibility(this)">
+              <div class="flex flex-col items-start justify-center gap-[5px] w-[90%]">
+                <h4 class="font-roobert font-semibold text-[16px] text-white uppercase">Desenvolvimento de infoprodutos</h4>
+                <p class="font-roobert font-normal text-[16px] text-gray-13 hidden">Toda a identidade visual do seu produto ou curso, área de membros da plataforma, página de captação, criativos de divulgação</p>
+              </div>
+            </div>
+        
+            <div class="w-[100%] py-[25px] border-b-[1px] border-b-gray-14 cursor-pointer flex items-center justify-center mx-auto" onclick="toggleVisibility(this)">
+              <div class="flex flex-col items-start justify-center gap-[5px] w-[90%]">
+                <h4 class="font-roobert font-semibold text-[16px] text-white uppercase">Desenvolvimento de infoprodutos</h4>
+                <p class="font-roobert font-normal text-[16px] text-gray-13 hidden">Toda a identidade visual do seu produto ou curso, área de membros da plataforma, página de captação, criativos de divulgação</p>
+              </div>
+            </div>
+        
+            <div class="w-[100%] py-[25px] border-b-[1px] border-b-gray-14 cursor-pointer flex items-center justify-center mx-auto" onclick="toggleVisibility(this)">
+              <div class="flex flex-col items-start justify-center gap-[5px] w-[90%]">
+                <h4 class="font-roobert font-semibold text-[16px] text-white uppercase">Desenvolvimento de infoprodutos</h4>
+                <p class="font-roobert font-normal text-[16px] text-gray-13 hidden">Toda a identidade visual do seu produto ou curso, área de membros da plataforma, página de captação, criativos de divulgação</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -492,5 +553,35 @@
     });
   </script>
 
+  <script>
+  //texto animado no scroll
+  gsap.registerPlugin(ScrollTrigger);
+
+  const splitTypes = document.querySelectorAll('.scroll-highlight');
+  splitTypes.forEach((char, i) => {
+    const text = new SplitType(char, { types: ['chars', 'words'] });
+    gsap.fromTo(
+      text.chars,
+      { color: "#202020" }, // Cor inicial do texto
+      {
+        color: "#D1D1D1", // Cor final do texto
+        scrollTrigger: {
+          trigger: char,
+          start: "top 90%",
+          end: "top 50%",
+          scrub: true,
+        },
+        stagger: 0.1,
+      }
+    );
+  });
+  </script>
+
+<script>
+  function toggleVisibility(divElement) {
+    const paragraph = divElement.querySelector('p');
+    paragraph.classList.toggle('hidden');
+  }
+</script>
 </body>
 </html>
