@@ -29,12 +29,16 @@ module.exports = {
         'gray-14': '#2B2B2B',
         'gray-15': '#898989',
         'gray-16': '#262626',
+        'gray-17': '#0C0C0C',
+        'gray-18': '#191919',
+        'gray-19': '#2D2D2D',
 
         'primary-1': '#D8FA2D',
       },
     },
     backgroundImage: {
       'notebook': "url('./img/notebook.png')",
+      'footer': "url('./img/bg-footer.png')"
     },
   },
   plugins: [

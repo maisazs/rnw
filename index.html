@@ -35,12 +35,15 @@
     .menu-slide {
       transition: transform 0.3s ease-in-out;
     }
+
     .menu-hidden {
       transform: translateX(100%);
     }
+
     .menu-visible {
       transform: translateX(0);
     }
+
     .typing {
       display: inline-block;
       white-space: nowrap;
@@ -126,56 +129,9 @@
   .gradiente-gray {
     background: linear-gradient(to right, #050505, transparent, #050505);
   }
-
-  .card-open {
-    background: #d8fa2d;
-    max-width: 280px;
-  }
-
-  .card-close {
-    background: #191919;
-    min-width: 187px;
-  }
-
-  .card-num-open {
-    font-size: 33px;
-    color: #000;
-  }
-
-  .card-num-close {
-    font-size: 19px;
-    color: #898989;
-    background: #2D2D2D;
-    padding: 15px 20px;
-    border-radius: 50%;
-  }
-
-  .passo-t-open {
-    display: block;
-  }
-  
-  .passo-t-close {
-    display: none;
-  }
-
-  .card-txt-open {
-    display: flex;
-  }
-
-  .card-txt-close {
-    display: none;
-  }
-
-  .passo-f-open {
-    display: none;
-  }
-
-  .passo-f-close {
-    display: flex;
-  }
   </style>
 </head>
-<body class="bg-gray-2">
+<body class="bg-gray-2 overflow-x-hidden">
 
   <nav class="fixed z-20 lg:mt-[50px] md:mt-[30px] mt-[20px] w-full">
     <div class="mx-auto flex justify-center max-w-screen-xl">
@@ -188,10 +144,10 @@
         </button>
         <div id="menu" class="hidden lg:flex flex-row gap-[30px] items-center">
           <a href="#home" class="font-roobert font-normal text-[16px] text-white hover:text-white transition-colors duration-300">Home</a>
-          <a href="#processos" class="font-roobert font-normal text-[16px] text-gray-5 hover:text-white transition-colors duration-300">Processos</a>
           <a href="#projetos" class="font-roobert font-normal text-[16px] text-gray-5 hover:text-white transition-colors duration-300">Nossos projetos</a>
           <a href="#oferta" class="font-roobert font-normal text-[16px] text-gray-5 hover:text-white transition-colors duration-300">O que oferecemos</a>
-          <a href="#" class="font-roobert font-medium text-[16px] text-gray-2 hover:bg-primary-1 transition-colors duration-300 px-[20px] py-[10px] bg-white rounded-[32px]">Entre em contato</a>
+          <a href="#processos" class="font-roobert font-normal text-[16px] text-gray-5 hover:text-white transition-colors duration-300">Processos</a>
+          <button class="font-roobert font-medium text-[16px] text-gray-2 hover:bg-primary-1 transition-colors duration-300 px-[20px] py-[10px] bg-white rounded-[32px]">Entre em contato</button>
         </div>
       </div>
     </div>
@@ -203,10 +159,10 @@
       <a href="#home"><img src="img/logo-nav.svg" alt="" class="md:scale-100 scale-75"></a>
       <div class="flex flex-col items-center justify-center gap-[30px]">
         <a href="#home" class="font-roobert font-normal text-[24px] text-white hover:text-primary-1 transition-colors duration-300">Home</a>
-        <a href="#processos" class="font-roobert font-normal text-[24px] text-white hover:text-primary-1 transition-colors duration-300">Processos</a>
         <a href="#projetos" class="font-roobert font-normal text-[24px] text-white hover:text-primary-1 transition-colors duration-300">Nossos projetos</a>
         <a href="#oferta" class="font-roobert font-normal text-[24px] text-white hover:text-primary-1 transition-colors duration-300">O que oferecemos</a>
-        <a href="#" class="font-roobert font-normal text-[24px] text-gray-2 hover:bg-primary-1 transition-colors duration-300 px-[20px] py-[10px] bg-white rounded-[32px]">Entre em contato</a>
+        <a href="#processos" class="font-roobert font-normal text-[24px] text-white hover:text-primary-1 transition-colors duration-300">Processos</a>
+        <button class="font-roobert font-normal text-[24px] text-gray-2 hover:bg-primary-1 transition-colors duration-300 px-[20px] py-[10px] bg-white rounded-[32px]">Entre em contato</button>
       </div>
     </div>
   </div>
@@ -236,10 +192,10 @@
   </header>
 
   <main>
-    <section id="processos" class="dm:py-[150px] py-[80px] bg-gray-2 flex items-center justify-center relative overflow-hidden">
+    <section id="home" class="dm:py-[150px] py-[80px] bg-gray-2 flex items-center justify-center relative overflow-hidden">
       <div class="container mx-[15px] max-w-screen-lg flex flex-col items-center justify-center gap-[50px]">
         <h2 class="font-roobert font-normal text-white text-[32px] text-center">
-          Porque escolher a <span class="text-primary-1 font-semibold">RNW Studio</span>
+          Porque escolher a <span class="text-primary-1 font-semibold"><br class="sm:hidden">RNW Studio</span>
         </h2>
         <div class=" grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-[10px] container group">
           <div class="relative bg-gray-8 hover:bg-gray-3 rounded-[14px] px-[40px] py-[55px] hover:scale-[102%] group-hover:not-hover:blur-sm group-hover:not-hover:scale-[98%] transition-all duration-300 mx-auto max-w-[350px] hover-line">
@@ -297,13 +253,13 @@
       </div>
     </section>
 
-    <section id="projetos" class="bg-white-2 py-[150px] w-[100%] relative">
+    <!-- <section id="projetos" class="bg-white-2 py-[150px] w-[100%] relative">
       <div class="flex flex-col items-center justify-center gap-[100px] w-[100%]">
         <div class="flex justify-center items-center w-[100%] bg-notebook bg-no-repeat bg-center bg-contain h-[486px] overflow-hidden relative shadow-overlay">
-          <div class="carousel flex items-center transition-transform duration-500 ease-in-out">
-            <img src="img/tela1.png" alt="Tela 1" class="carousel-item mt-[-35px] scale-[0.85] opacity-70 transition-all duration-500 ease-in-out">
-            <img src="img/tela2.png" alt="Tela 2" class="carousel-item mt-[-35px] scale-[1] opacity-100 transition-all duration-500 ease-in-out">
-            <img src="img/tela3.png" alt="Tela 3" class="carousel-item mt-[-35px] scale-[0.85] opacity-70 transition-all duration-500 ease-in-out">
+          <div class="carousel flex items-center duration-500 ease-in-out w-[100%]">
+            <img src="img/tela1.png" alt="Tela 1" class="carousel-item mt-[-35px] scale-[0.85] opacity-70 transition-all duration-500 ease-in-out w-[100%]">
+            <img src="img/tela2.png" alt="Tela 2" class="carousel-item mt-[-35px] scale-[1] opacity-100 transition-all duration-500 ease-in-out w-[100%]">
+            <img src="img/tela3.png" alt="Tela 3" class="carousel-item mt-[-35px] scale-[0.85] opacity-70 transition-all duration-500 ease-in-out w-[100%]">
           </div>
         </div>
     
@@ -313,41 +269,41 @@
           <button class="font-roobert font-normal md:text-[16px] text-[14px] text-primary-1 px-[85px] py-[12px] rounded-[24px] bg-black hover:bg-primary-1 hover:text-black transition-colors duration-300 mt-[30px]" style="box-shadow: 0px 0px 35px -10px #000;">CONTRATE A RNW</button>
         </div>
       </div>
-    </section>
+    </section> -->
     
     <section id="oferta">
-      <div class="h-[200px] flex flex-col justify-end items-start gap-[10px] overflow-x-hidden">
+      <div class="sm:h-[200px] h-[180px] flex flex-col justify-end items-start gap-[10px] overflow-x-hidden">
         <!-- Primeira linha -->
         <div class="w-[100vw]"">
           <div class="flex gap-[10px] whitespace-nowrap justify-end items-end row1">
-            <span class="font-roobert font-normal text-[24px] text-white bg-gray-10 rounded-[45px] py-[13px] px-[35px]">
+            <span class="font-roobert font-normal md:text-[24px] text-[17px] text-white bg-gray-10 rounded-[45px] py-[13px] px-[35px] sm:scale-[100%]">
               Páginas com Alta Performance
             </span>
-            <span class="font-roobert font-normal text-[24px] text-white bg-gray-10 rounded-[45px] py-[13px] px-[35px]">
+            <span class="font-roobert font-normal md:text-[24px] text-[17px] text-white bg-gray-10 rounded-[45px] py-[13px] px-[35px]">
               Estratégias
             </span>
-            <span class="font-roobert font-normal text-[24px] text-white bg-gray-10 rounded-[45px] py-[13px] px-[35px]">
+            <span class="font-roobert font-normal md:text-[24px] text-[17px] text-white bg-gray-10 rounded-[45px] py-[13px] px-[35px]">
               Páginas de Alta Conversão
             </span>
-            <span class="font-roobert font-normal text-[24px] text-white bg-gray-10 rounded-[45px] py-[13px] px-[35px]">
+            <span class="font-roobert font-normal md:text-[24px] text-[17px] text-white bg-gray-10 rounded-[45px] py-[13px] px-[35px]">
               Suporte Completo
             </span>
-            <span class="font-roobert font-normal text-[24px] text-white bg-gray-10 rounded-[45px] py-[13px] px-[35px]">
+            <span class="font-roobert font-normal md:text-[24px] text-[17px] text-white bg-gray-10 rounded-[45px] py-[13px] px-[35px]">
               Resultados Exponenciais
             </span>
-            <span class="font-roobert font-normal text-[24px] text-white bg-gray-10 rounded-[45px] py-[13px] px-[35px]">
+            <span class="font-roobert font-normal md:text-[24px] text-[17px] text-white bg-gray-10 rounded-[45px] py-[13px] px-[35px]">
               Páginas com Alta Performance
             </span>
-            <span class="font-roobert font-normal text-[24px] text-white bg-gray-10 rounded-[45px] py-[13px] px-[35px]">
+            <span class="font-roobert font-normal md:text-[24px] text-[17px] text-white bg-gray-10 rounded-[45px] py-[13px] px-[35px]">
               Estratégias
             </span>
-            <span class="font-roobert font-normal text-[24px] text-white bg-gray-10 rounded-[45px] py-[13px] px-[35px]">
+            <span class="font-roobert font-normal md:text-[24px] text-[17px] text-white bg-gray-10 rounded-[45px] py-[13px] px-[35px]">
               Páginas de Alta Conversão
             </span>
-            <span class="font-roobert font-normal text-[24px] text-white bg-gray-10 rounded-[45px] py-[13px] px-[35px]">
+            <span class="font-roobert font-normal md:text-[24px] text-[17px] text-white bg-gray-10 rounded-[45px] py-[13px] px-[35px]">
               Suporte Completo
             </span>
-            <span class="font-roobert font-normal text-[24px] text-white bg-gray-10 rounded-[45px] py-[13px] px-[35px]">
+            <span class="font-roobert font-normal md:text-[24px] text-[17px] text-white bg-gray-10 rounded-[45px] py-[13px] px-[35px]">
               Resultados Exponenciais
             </span>
           </div>
@@ -356,99 +312,101 @@
         <!-- Segunda linha -->
         <div class="w-[100vw] ">
           <div class="flex gap-[10px]  whitespace-nowrap row2 justify-start items-start">
-            <span class="font-roobert font-normal text-[24px] text-white bg-gray-10 rounded-[45px] py-[13px] px-[35px]">
+            <span class="font-roobert font-normal md:text-[24px] text-[17px] text-white bg-gray-10 rounded-[45px] py-[13px] px-[35px]">
               Páginas com Alta Performance
             </span>
-            <span class="font-roobert font-normal text-[24px] text-white bg-gray-10 rounded-[45px] py-[13px] px-[35px]">
+            <span class="font-roobert font-normal md:text-[24px] text-[17px] text-white bg-gray-10 rounded-[45px] py-[13px] px-[35px]">
               Estratégias
             </span>
-            <span class="font-roobert font-normal text-[24px] text-white bg-gray-10 rounded-[45px] py-[13px] px-[35px]">
+            <span class="font-roobert font-normal md:text-[24px] text-[17px] text-white bg-gray-10 rounded-[45px] py-[13px] px-[35px]">
               Páginas de Alta Conversão
             </span>
-            <span class="font-roobert font-normal text-[24px] text-white bg-gray-10 rounded-[45px] py-[13px] px-[35px]">
+            <span class="font-roobert font-normal md:text-[24px] text-[17px] text-white bg-gray-10 rounded-[45px] py-[13px] px-[35px]">
               Suporte Completo
             </span>
-            <span class="font-roobert font-normal text-[24px] text-white bg-gray-10 rounded-[45px] py-[13px] px-[35px]">
+            <span class="font-roobert font-normal md:text-[24px] text-[17px] text-white bg-gray-10 rounded-[45px] py-[13px] px-[35px]">
               Resultados Exponenciais
             </span>
-            <span class="font-roobert font-normal text-[24px] text-white bg-gray-10 rounded-[45px] py-[13px] px-[35px]">
+            <span class="font-roobert font-normal md:text-[24px] text-[17px] text-white bg-gray-10 rounded-[45px] py-[13px] px-[35px]">
               Páginas com Alta Performance
             </span>
-            <span class="font-roobert font-normal text-[24px] text-white bg-gray-10 rounded-[45px] py-[13px] px-[35px]">
+            <span class="font-roobert font-normal md:text-[24px] text-[17px] text-white bg-gray-10 rounded-[45px] py-[13px] px-[35px]">
               Estratégias
             </span>
-            <span class="font-roobert font-normal text-[24px] text-white bg-gray-10 rounded-[45px] py-[13px] px-[35px]">
+            <span class="font-roobert font-normal md:text-[24px] text-[17px] text-white bg-gray-10 rounded-[45px] py-[13px] px-[35px]">
               Páginas de Alta Conversão
             </span>
-            <span class="font-roobert font-normal text-[24px] text-white bg-gray-10 rounded-[45px] py-[13px] px-[35px]">
+            <span class="font-roobert font-normal md:text-[24px] text-[17px] text-white bg-gray-10 rounded-[45px] py-[13px] px-[35px]">
               Suporte Completo
             </span>
-            <span class="font-roobert font-normal text-[24px] text-white bg-gray-10 rounded-[45px] py-[13px] px-[35px]">
+            <span class="font-roobert font-normal md:text-[24px] text-[17px] text-white bg-gray-10 rounded-[45px] py-[13px] px-[35px]">
               Resultados Exponenciais
             </span>
           </div>
         </div>
 
-        <div class="w-[100vw] h-[200px] mt-[-200px] z-[10] gradiente-gray"></div>
+        <div class="w-[100vw] sm:h-[200px] h-[180px] sm:mt-[-200px] mt-[-180px] z-[10] gradiente-gray"></div>
       </div>
 
-      <div class="container flex flex-col mt-[200px] items-center justify-center mx-auto max-w-screen-xl gap-[50px]">
-        <h2 class="scroll-highlight text-center font-roobert font-medium text-[72px] text-gray-11 mx-[15px]">Chegou a hora de alavancar os resultados do seu negócio.</h2>
+      <div class="flex flex-col md:mt-[200px] mt-[100px] items-center justify-center sm:gap-[50px] gap-[100px] max-w-screen-xl mx-auto w-[100%] container">
+        <h2 class="scroll-highlight text-center font-roobert font-medium md:text-[72px] text-[62px] text-gray-11 px-[15px] container sm:leading-none leading-[90px]">Chegou a <br class="sm:hidden">hora de <br class="sm:hidden">alavancar <br class="sm:hidden">os resultados <br class="sm:hidden">do seu <br class="sm:hidden">negócio.</h2>
 
-        <div class="flex flex-col justify-center items-center gap-[30px] bg-gray-12 rounded-[37px] w-[100%] py-[100px] mx-[15px]">
-          <h3 class="font-roobert font-normal text-[32px] text-white">O que <span class="text-primary-1">oferecemos</span></h3>
-          <div class="w-[70%]">
-            <div class="w-[100%] py-[25px] border-b-[1px] border-b-gray-14 cursor-pointer flex items-center justify-center mx-auto" onclick="toggleVisibility(this)">
-              <div class="flex flex-col items-start justify-center gap-[5px] w-[90%]">
-                <h4 class="font-roobert font-semibold text-[16px] text-white hover:text-white-3 transition-colors duration-300 uppercase">Desenvolvimento de infoprodutos</h4>
-                <p class="font-roobert font-normal text-[16px] text-gray-13 transition-all duration-300 ease-in-out max-h-0 overflow-hidden opacity-0">
-                  Toda a identidade visual do seu produto ou curso, área de membros da plataforma, página de captação, criativos de divulgação
-                </p>
+        <div class="bg-gray-12 rounded-[37px] sm:py-[100px] py-[50px] md:w-[97.9%] w-[96%] container">
+          <div class="flex flex-col justify-center items-center gap-[30px] ">
+            <h3 class="font-roobert font-normal md:text-[32px] text-[25px] text-white">O que <span class="text-primary-1">oferecemos</span></h3>
+            <div class="w-[70%]">
+              <div class="w-[100%] py-[25px] border-b-[1px] border-b-gray-14 cursor-pointer flex items-center justify-center mx-auto" onclick="toggleVisibility(this)">
+                <div class="flex flex-col items-start justify-center gap-[5px] w-[90%]">
+                  <h4 class="font-roobert font-semibold md:text-[16px] text-[14px] text-white hover:text-white-3 transition-colors duration-300 uppercase">Desenvolvimento de infoprodutos</h4>
+                  <p class="font-roobert font-normal md:text-[16px] text-[14px] text-gray-13 transition-all duration-300 ease-in-out max-h-0 overflow-hidden opacity-0">
+                    Toda a identidade visual do seu produto ou curso, área de membros da plataforma, página de captação, criativos de divulgação
+                  </p>
+                </div>
               </div>
-            </div>
 
-            <div class="w-[100%] py-[25px] border-b-[1px] border-b-gray-14 cursor-pointer flex items-center justify-center mx-auto" onclick="toggleVisibility(this)">
-              <div class="flex flex-col items-start justify-center gap-[5px] w-[90%]">
-                <h4 class="font-roobert font-semibold text-[16px] text-white uppercase hover:text-white-3 transition-colors duration-300">Estratégia e comunicação visual de lançamentos digitais</h4>
-                <p class="font-roobert font-normal text-[16px] text-gray-13 transition-all duration-300 ease-in-out max-h-0 overflow-hidden opacity-0">
-                  Toda a identidade visual do seu produto ou curso, área de membros da plataforma, página de captação, criativos de divulgação
-                </p>
+              <div class="w-[100%] py-[25px] border-b-[1px] border-b-gray-14 cursor-pointer flex items-center justify-center mx-auto" onclick="toggleVisibility(this)">
+                <div class="flex flex-col items-start justify-center gap-[5px] w-[90%]">
+                  <h4 class="font-roobert font-semibold md:text-[16px] text-[14px] text-white uppercase hover:text-white-3 transition-colors duration-300">Estratégia e comunicação visual de lançamentos digitais</h4>
+                  <p class="font-roobert font-normal md:text-[16px] text-[14px] text-gray-13 transition-all duration-300 ease-in-out max-h-0 overflow-hidden opacity-0">
+                    Toda a identidade visual do seu produto ou curso, área de membros da plataforma, página de captação, criativos de divulgação
+                  </p>
+                </div>
               </div>
-            </div>
 
-            <div class="w-[100%] py-[25px] border-b-[1px] border-b-gray-14 cursor-pointer flex items-center justify-center mx-auto" onclick="toggleVisibility(this)">
-              <div class="flex flex-col items-start justify-center gap-[5px] w-[90%]">
-                <h4 class="font-roobert font-semibold text-[16px] text-white uppercase hover:text-white-3 transition-colors duration-300">Comunicação visual de negócio físico ou digital</h4>
-                <p class="font-roobert font-normal text-[16px] text-gray-13 transition-all duration-300 ease-in-out max-h-0 overflow-hidden opacity-0">
-                  Toda a identidade visual do seu produto ou curso, área de membros da plataforma, página de captação, criativos de divulgação
-                </p>
+              <div class="w-[100%] py-[25px] border-b-[1px] border-b-gray-14 cursor-pointer flex items-center justify-center mx-auto" onclick="toggleVisibility(this)">
+                <div class="flex flex-col items-start justify-center gap-[5px] w-[90%]">
+                  <h4 class="font-roobert font-semibold md:text-[16px] text-[14px] text-white uppercase hover:text-white-3 transition-colors duration-300">Comunicação visual de negócio físico ou digital</h4>
+                  <p class="font-roobert font-normal md:text-[16px] text-[14px] text-gray-13 transition-all duration-300 ease-in-out max-h-0 overflow-hidden opacity-0">
+                    Toda a identidade visual do seu produto ou curso, área de membros da plataforma, página de captação, criativos de divulgação
+                  </p>
+                </div>
               </div>
-            </div>
 
-            <div class="w-[100%] py-[25px] border-b-[1px] border-b-gray-14 cursor-pointer flex items-center justify-center mx-auto" onclick="toggleVisibility(this)">
-              <div class="flex flex-col items-start justify-center gap-[5px] w-[90%]">
-                <h4 class="font-roobert font-semibold text-[16px] text-white uppercase hover:text-white-3 transition-colors duration-300">Desenvolvimento de interfaces de aplicativo</h4>
-                <p class="font-roobert font-normal text-[16px] text-gray-13 transition-all duration-300 ease-in-out max-h-0 overflow-hidden opacity-0">
-                  Toda a identidade visual do seu produto ou curso, área de membros da plataforma, página de captação, criativos de divulgação
-                </p>
+              <div class="w-[100%] py-[25px] border-b-[1px] border-b-gray-14 cursor-pointer flex items-center justify-center mx-auto" onclick="toggleVisibility(this)">
+                <div class="flex flex-col items-start justify-center gap-[5px] w-[90%]">
+                  <h4 class="font-roobert font-semibold md:text-[16px] text-[14px] text-white uppercase hover:text-white-3 transition-colors duration-300">Desenvolvimento de interfaces de aplicativo</h4>
+                  <p class="font-roobert font-normal md:text-[16px] text-[14px] text-gray-13 transition-all duration-300 ease-in-out max-h-0 overflow-hidden opacity-0">
+                    Toda a identidade visual do seu produto ou curso, área de membros da plataforma, página de captação, criativos de divulgação
+                  </p>
+                </div>
               </div>
-            </div>
 
-            <div class="w-[100%] py-[25px] border-b-[1px] border-b-gray-14 cursor-pointer flex items-center justify-center mx-auto" onclick="toggleVisibility(this)">
-              <div class="flex flex-col items-start justify-center gap-[5px] w-[90%]">
-                <h4 class="font-roobert font-semibold text-[16px] text-white uppercase hover:text-white-3 transition-colors duration-300">E-commerce, site institucional e landing pages</h4>
-                <p class="font-roobert font-normal text-[16px] text-gray-13 transition-all duration-300 ease-in-out max-h-0 overflow-hidden opacity-0">
-                  Toda a identidade visual do seu produto ou curso, área de membros da plataforma, página de captação, criativos de divulgação
-                </p>
+              <div class="w-[100%] py-[25px] border-b-[1px] border-b-gray-14 cursor-pointer flex items-center justify-center mx-auto" onclick="toggleVisibility(this)">
+                <div class="flex flex-col items-start justify-center gap-[5px] w-[90%]">
+                  <h4 class="font-roobert font-semibold text-[16px] text-white uppercase hover:text-white-3 transition-colors duration-300">E-commerce, site institucional e landing pages</h4>
+                  <p class="font-roobert font-normal text-[16px] text-gray-13 transition-all duration-300 ease-in-out max-h-0 overflow-hidden opacity-0">
+                    Toda a identidade visual do seu produto ou curso, área de membros da plataforma, página de captação, criativos de divulgação
+                  </p>
+                </div>
               </div>
-            </div>
 
-            <div class="w-[100%] py-[25px] border-b-[1px] border-b-gray-14 cursor-pointer flex items-center justify-center mx-auto" onclick="toggleVisibility(this)">
-              <div class="flex flex-col items-start justify-center gap-[5px] w-[90%]">
-                <h4 class="font-roobert font-semibold text-[16px] text-white uppercase hover:text-white-3 transition-colors duration-300">Identidade visual de marca</h4>
-                <p class="font-roobert font-normal text-[16px] text-gray-13 transition-all duration-300 ease-in-out max-h-0 overflow-hidden opacity-0">
-                  Toda a identidade visual do seu produto ou curso, área de membros da plataforma, página de captação, criativos de divulgação
-                </p>
+              <div class="w-[100%] py-[25px] border-b-[1px] border-b-gray-14 cursor-pointer flex items-center justify-center mx-auto" onclick="toggleVisibility(this)">
+                <div class="flex flex-col items-start justify-center gap-[5px] w-[90%]">
+                  <h4 class="font-roobert font-semibold md:text-[16px] text-[14px] text-white uppercase hover:text-white-3 transition-colors duration-300">Identidade visual de marca</h4>
+                  <p class="font-roobert font-normal md:text-[16px] text-[14px] text-gray-13 transition-all duration-300 ease-in-out max-h-0 overflow-hidden opacity-0">
+                    Toda a identidade visual do seu produto ou curso, área de membros da plataforma, página de captação, criativos de divulgação
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -456,96 +414,96 @@
       </div>
     </section>
 
-    <section class="container max-w-screen-xl mx-auto pt-[150px] flex flex-col items-center gap-[70px]">
+    <section id="processos" class="max-w-screen-x container mx-auto pt-[150px] flex flex-col items-center gap-[70px]">
       <div class="flex flex-col items-center mx-[15px] gap-[80px]">
         <div class="flex flex-col items-center gap-[20px]">
-          <h2 class="font-roobert font-normal text-[32px] text-white text-center">Conheça nosso <span class="text-primary-1">processo de criação</span></h2>
-          <p class="font-roobert font-normal text-[16px] text-gray-6 text-center max-w-[544px]">Você terá uma estrutura completa para transformar todos os aspectos do seu negócio e dobrar seu lucro, não os seus custos.</p>
+          <h2 class="font-roobert font-normal md:text-[32px] text-[25px] text-white text-center">Conheça nosso <span class="text-primary-1">processo de criação</span></h2>
+          <p class="font-roobert font-normal md:text-[16px] text-[14px] text-gray-6 text-center max-w-[544px]">Você terá uma estrutura completa para transformar todos os aspectos do seu negócio e dobrar seu lucro, não os seus custos.</p>
         </div>
 
-        <div class="w-[100%] flex flex-row gap-[7px]">
+        <div class="w-[100%] flex sm:flex-row flex-col gap-[7px] container lg:max-w-screen-lg md:max-w-screen-md sm:max-w-screen-sm mx-auto justify-center">
 
-          <div class="card-open rounded-[12px] py-[20px] px-[30px] flex flex-col items-start justify-between h-[300px] cursor-pointer">
-            <div class="flex flex-row justify-between items-center w-[100%]">
-              <span class="card-num-open font-roobert font-semibold">01</span>
-              <span class="passo-t-open font-roobert font-normal text-[12px] py-[2px] px-[15px] rounded-[14px] text-black border-[1px] border-black uppercase">passo 1</span>
+          <div class="card card-open">
+            <div class="card-top">
+              <div class="card-num-bg-open"><span class="card-num-open card-num">01</span></div>
+              <span class="passo-t-open passo-top">passo 1</span>
             </div>
-            <div class="card-txt-open flex-col items-start justify-between gap-[5px]">
-              <h4 class="font-roobert font-semibold text-[24px] text-black">Contato</h4>
-              <p class="font-roobert font-normal text-[16px] text-black opacity-[48%]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa.</p>
+            <div class="card-txt-open card-txt">
+              <h4 class="card-txt-contato">Contato</h4>
+              <p class="card-txt-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa.</p>
             </div>
-            <div class="passo-f-open justify-center items-center mx-auto">
-              <span class="font-roobert font-normal text-[12px] py-[2px] px-[15px] rounded-[14px] text-gray-15 border-[1px] border-gray-15 uppercase">passo 1</span>
+            <div class="passo-f-open passo-foot">
+              <span class="card-passo-foot">passo 1</span>
             </div>
           </div>
 
-          <div class="card-close rounded-[12px] py-[20px] px-[30px] flex flex-col items-start justify-between h-[300px] cursor-pointer">
-            <div class="flex flex-row justify-between items-center w-[100%]">
-              <span class="card-num-close font-roobert font-semibold">01</span>
-              <span class="passo-t-close font-roobert font-normal text-[12px] py-[2px] px-[15px] rounded-[14px] text-black border-[1px] border-black uppercase">passo 1</span>
+          <div class="card-close card">
+            <div class="card-top">
+              <div class="card-num-bg-close"><span class="card-num-close card-num">02</span></div>
+              <span class="passo-t-close passo-top">passo 2</span>
             </div>
-            <div class="card-txt-close flex-col items-start justify-between gap-[5px]">
-              <h4 class="font-roobert font-semibold text-[24px] text-black">Contato</h4>
-              <p class="font-roobert font-normal text-[16px] text-black opacity-[48%]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa.</p>
+            <div class="card-txt-close card-txt">
+              <h4 class="card-txt-contato">Contato</h4>
+              <p class="card-txt-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa.</p>
             </div>
-            <div class="passo-f-close justify-center items-center mx-auto">
-              <span class="font-roobert font-normal text-[12px] py-[2px] px-[15px] rounded-[14px] text-gray-15 border-[1px] border-gray-15 uppercase">passo 1</span>
-            </div>
-          </div>
-
-          <div class="card-close rounded-[12px] py-[20px] px-[30px] flex flex-col items-start justify-between h-[300px] cursor-pointer">
-            <div class="flex flex-row justify-between items-center w-[100%]">
-              <span class="card-num-close font-roobert font-semibold">01</span>
-              <span class="passo-t-close font-roobert font-normal text-[12px] py-[2px] px-[15px] rounded-[14px] text-black border-[1px] border-black uppercase">passo 1</span>
-            </div>
-            <div class="card-txt-close flex-col items-start justify-between gap-[5px]">
-              <h4 class="font-roobert font-semibold text-[24px] text-black">Contato</h4>
-              <p class="font-roobert font-normal text-[16px] text-black opacity-[48%]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa.</p>
-            </div>
-            <div class="passo-f-close justify-center items-center mx-auto">
-              <span class="font-roobert font-normal text-[12px] py-[2px] px-[15px] rounded-[14px] text-gray-15 border-[1px] border-gray-15 uppercase">passo 1</span>
+            <div class="passo-f-close passo-foot">
+              <span class="card-passo-foot">passo 2</span>
             </div>
           </div>
 
-          <div class="card-close rounded-[12px] py-[20px] px-[30px] flex flex-col items-start justify-between h-[300px] cursor-pointer">
-            <div class="flex flex-row justify-between items-center w-[100%]">
-              <span class="card-num-close font-roobert font-semibold">01</span>
-              <span class="passo-t-close font-roobert font-normal text-[12px] py-[2px] px-[15px] rounded-[14px] text-black border-[1px] border-black uppercase">passo 1</span>
+          <div class="card-close card">
+            <div class="card-top">
+              <div class="card-num-bg-close"><span class="card-num-close card-num">03</span></div>
+              <span class="passo-t-close passo-top">passo 3</span>
             </div>
-            <div class="card-txt-close flex-col items-start justify-between gap-[5px]">
-              <h4 class="font-roobert font-semibold text-[24px] text-black">Contato</h4>
-              <p class="font-roobert font-normal text-[16px] text-black opacity-[48%]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa.</p>
+            <div class="card-txt-close card-txt">
+              <h4 class="card-txt-contato">Contato</h4>
+              <p class="card-txt-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa.</p>
             </div>
-            <div class="passo-f-close justify-center items-center mx-auto">
-              <span class="font-roobert font-normal text-[12px] py-[2px] px-[15px] rounded-[14px] text-gray-15 border-[1px] border-gray-15 uppercase">passo 1</span>
-            </div>
-          </div>
-
-          <div class="card-close rounded-[12px] py-[20px] px-[30px] flex flex-col items-start justify-between h-[300px] cursor-pointer">
-            <div class="flex flex-row justify-between items-center w-[100%]">
-              <span class="card-num-close font-roobert font-semibold">01</span>
-              <span class="passo-t-close font-roobert font-normal text-[12px] py-[2px] px-[15px] rounded-[14px] text-black border-[1px] border-black uppercase">passo 1</span>
-            </div>
-            <div class="card-txt-close flex-col items-start justify-between gap-[5px]">
-              <h4 class="font-roobert font-semibold text-[24px] text-black">Contato</h4>
-              <p class="font-roobert font-normal text-[16px] text-black opacity-[48%]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa.</p>
-            </div>
-            <div class="passo-f-close justify-center items-center mx-auto">
-              <span class="font-roobert font-normal text-[12px] py-[2px] px-[15px] rounded-[14px] text-gray-15 border-[1px] border-gray-15 uppercase">passo 1</span>
+            <div class="passo-f-close passo-foot">
+              <span class="card-passo-foot">passo 3</span>
             </div>
           </div>
 
-          <div class="card-close rounded-[12px] py-[20px] px-[30px] flex flex-col items-start justify-between h-[300px] cursor-pointer">
-            <div class="flex flex-row justify-between items-center w-[100%]">
-              <span class="card-num-close font-roobert font-semibold">01</span>
-              <span class="passo-t-close font-roobert font-normal text-[12px] py-[2px] px-[15px] rounded-[14px] text-black border-[1px] border-black uppercase">passo 1</span>
+          <div class="card-close card">
+            <div class="card-top">
+              <div class="card-num-bg-close"><span class="card-num-close card-num">04</span></div>
+              <span class="passo-t-close passo-top">passo 4</span>
             </div>
-            <div class="card-txt-close flex-col items-start justify-between gap-[5px]">
-              <h4 class="font-roobert font-semibold text-[24px] text-black">Contato</h4>
-              <p class="font-roobert font-normal text-[16px] text-black opacity-[48%]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa.</p>
+            <div class="card-txt-close card-txt">
+              <h4 class="card-txt-contato">Contato</h4>
+              <p class="card-txt-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa.</p>
             </div>
-            <div class="passo-f-close justify-center items-center mx-auto">
-              <span class="font-roobert font-normal text-[12px] py-[2px] px-[15px] rounded-[14px] text-gray-15 border-[1px] border-gray-15 uppercase">passo 1</span>
+            <div class="passo-f-close passo-foot">
+              <span class="card-passo-foot">passo 4</span>
+            </div>
+          </div>
+
+          <div class="card-close card">
+            <div class="card-top">
+              <div class="card-num-bg-close"><span class="card-num-close card-num">05</span></div>
+              <span class="passo-t-close passo-top">passo 5</span>
+            </div>
+            <div class="card-txt-close card-txt">
+              <h4 class="card-txt-contato">Contato</h4>
+              <p class="fcard-txt-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa.</p>
+            </div>
+            <div class="passo-f-close passo-foot">
+              <span class="card-passo-foot">passo 5</span>
+            </div>
+          </div>
+
+          <div class="card-close card">
+            <div class="card-top">
+              <div class="card-num-bg-close"><span class="card-num-close card-num">06</span></div>
+              <span class="passo-t-close passo-top">passo 6</span>
+            </div>
+            <div class="card-txt-close card-txt">
+              <h4 class="card-txt-contato">Contato</h4>
+              <p class="card-txt-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa.</p>
+            </div>
+            <div class="passo-f-close passo-foot">
+              <span class="card-passo-foot">passo 6</span>
             </div>
           </div>
 
@@ -553,9 +511,9 @@
       </div>
     </section>
 
-    <section class="container max-w-screen-xl mx-auto pt-[200px] flex flex-col items-center">
-      <div class="flex flex-col items-center mx-[15px] w-[100%]"">
-        <div class="flex flex-row justify-between items-center w-[100%]">
+    <!-- <section class="container max-w-screen-xl mx-auto pt-[200px] pb-[100px] flex flex-col items-center">
+      <div class="flex flex-col items-center w-[100%]"">
+        <div class="flex flex-row justify-between items-center w-[100%] px-[15px]">
           <div class="flex flex-col items-start gap-[5px] max-w-[520px]">
             <h2 class="font-roobert font-normal text-[32px] text-white text-start">Algumas <span class="text-primary-1">pessoas que foram impactadas</span> por nossos projetos</h2>
             <p class="font-roobert font-normal text-[16px] text-gray-6 text-start">Faça seu lançamento bater múltiplos 6 e 7 dígitos com nosso sistema validado que já lançou os maiores players do mercado digital.</p>
@@ -566,15 +524,43 @@
           </div>
         </div>
 
-        <div class="flex flex-row justify-between items-center w-[100%] gap-[7px] pt-[70px]">
-          <div class="w-[25%] h-[384px] bg-gray-16 rounded-[9px]"></div>
-          <div class="w-[25%] h-[384px] bg-gray-16 rounded-[9px]"></div>
-          <div class="w-[25%] h-[384px] bg-gray-16 rounded-[9px]"></div>
-          <div class="w-[25%] h-[384px] bg-gray-16 rounded-[9px]"></div>
+        <div class="flex flex-row justify-between items-center w-[100%] gap-[7px] pt-[70px] px-[15px]">
+          <div class="w-[25%] h-[384px] bg-gray-16 rounded-[9px] hover:bg-gray-14 transition-all duration-300"></div>
+          <div class="w-[25%] h-[384px] bg-gray-16 rounded-[9px] hover:bg-gray-14 transition-all duration-300"></div>
+          <div class="w-[25%] h-[384px] bg-gray-16 rounded-[9px] hover:bg-gray-14 transition-all duration-300"></div>
+          <div class="w-[25%] h-[384px] bg-gray-16 rounded-[9px] hover:bg-gray-14 transition-all duration-300"></div>
         </div>
       </div>
-    </section>
+    </section> -->
   </main>
+
+  <!-- <footer class="bg-gray-17 ">
+    <div class="container max-w-screen-xl mx-auto flex flex-col items-center justify-center ">
+      <div class="mx-[15px] w-[100%] flex flex-row pt-[150px] justify-between items-center gap-[15px]">
+        <div class="flex flex-col items-start gap-[15px] max-w-[360px] ">
+          <img src="img/logo-footer.svg" alt="Logo">
+          <p class="font-roobert font-normal text-[12px] text-gray-9">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+          <div class="flex flex-row items-start gap-[10px]">
+            <a href="#" class="p-[7px] rounded-[50%] bg-gray-9 hover:bg-gray-14 transition-all duration-300 cursor-pointer"><img src="img/instagram.svg" alt="Logo instagram"></a>
+            <a href="#" class="p-[7px] rounded-[50%] bg-gray-9 cursor-pointer hover:bg-gray-14 transition-all duration-300"><img src="img/whatsapp.svg" alt="Logo Whatsapp"></a>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex flex-col items-start gap-[7px]">
+            <h5 class="font-roobert font-normal uppercase text-[15px] text-gray-13">sitemap</h5>
+            <ul class="flex flex-col items-start gap-[7px]">
+              <li><a href="#" class="font-roobert font-normal text-[15px] text-gray-9 hover:underline">Home</a></li>
+              <li><a href="#" class="font-roobert font-normal text-[15px] text-gray-9 hover:underline">Serviços</a></li>
+              <li><a href="#" class="font-roobert font-normal text-[15px] text-gray-9 hover:underline">Cases</a></li>
+              <li><a href="#" class="font-roobert font-normal text-[15px] text-gray-9 hover:underline">Marcas</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="mt-[-100px]"><img src="img/bg-footer.png" alt=""></div>
+    </div>
+  </footer> -->
 
   <script>
     //menu
@@ -719,8 +705,6 @@
 
     setInterval(moveCarousel, 3000);
   });
-
-
   </script>
 
   <script>
@@ -747,27 +731,28 @@
   </script>
 
   <script>
-  //texto animado no scroll
-  gsap.registerPlugin(ScrollTrigger);
+    // texto animado
+    gsap.registerPlugin(ScrollTrigger);
 
-  const splitTypes = document.querySelectorAll('.scroll-highlight');
-  splitTypes.forEach((char, i) => {
-    const text = new SplitType(char, { types: ['chars', 'words'] });
-    gsap.fromTo(
-      text.chars,
-      { color: "#202020" }, // Cor inicial do texto
-      {
-        color: "#D1D1D1", // Cor final do texto
-        scrollTrigger: {
-          trigger: char,
-          start: "top 90%",
-          end: "top 30%",
-          scrub: true,
-        },
-        stagger: 0.1,
-      }
-    );
-  });
+    const splitTypes = document.querySelectorAll('.scroll-highlight');
+    splitTypes.forEach((char, i) => {
+      const text = new SplitType(char, { types: ['chars', 'words'] });
+      gsap.fromTo(
+        text.chars,
+        { color: "#202020" }, // Cor inicial do texto
+        {
+          color: "#D1D1D1", // Cor final do texto
+          scrollTrigger: {
+            trigger: char,
+            start: "top 90%",
+            end: () => window.innerWidth < 640 ? "top 10%" : "top 30%",
+            scrub: true,
+          },
+          stagger: 0.1,
+        }
+      );
+    });
+
   </script>
 
   <script>
@@ -796,9 +781,7 @@
     cards.forEach(card => {
       card.addEventListener('click', () => {
         cards.forEach(otherCard => {
-          if (otherCard !== card && otherCard.classList.contains('card-open')) {
-            otherCard.style.transition = 'width 0.5s ease-in-out';
-            otherCard.style.width = '200px'; 
+          if (otherCard !== card && otherCard.classList.contains('card-open')) { 
             setTimeout(() => {
               otherCard.classList.remove('card-open');
               otherCard.classList.add('card-close');
@@ -808,16 +791,12 @@
         });
 
         if (card.classList.contains('card-open')) {
-          card.style.transition = 'width 0.5s ease-in-out';
-          card.style.width = '200px';
           setTimeout(() => {
             card.classList.remove('card-open');
             card.classList.add('card-close');
             toggleRelatedClasses(card, 'open', 'close');
           }, 500);
         } else if (card.classList.contains('card-close')) {
-          card.style.transition = 'width 0.5s ease-in-out';
-          card.style.width = '280px';
           setTimeout(() => {
             card.classList.remove('card-close');
             card.classList.add('card-open');
@@ -832,7 +811,8 @@
         'card-num-',
         'passo-t-',
         'card-txt-',
-        'passo-f-'
+        'passo-f-',
+        'card-num-bg-'
       ];
 
       relatedClasses.forEach(baseClass => {
@@ -849,4 +829,4 @@
     }
   </script>
 </body>
-</html>
+</
