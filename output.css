@@ -590,7 +590,6 @@ video {
 
 .card {
   display: flex;
-  height: auto;
   cursor: pointer;
   flex-direction: column;
   align-items: flex-start;
@@ -599,13 +598,64 @@ video {
   border-radius: 12px;
   padding-top: 20px;
   padding-bottom: 20px;
+  transition-property: all;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-open {
+  height: auto;
+  width: 100%;
+  --tw-bg-opacity: 1;
+  background-color: rgb(216 250 45 / var(--tw-bg-opacity, 1));
   padding-left: 30px;
   padding-right: 30px;
 }
 
 @media (min-width: 640px) {
-  .card {
-    min-height: 200px;
+  .card-open {
+    height: 350px;
+    width: 40%;
+  }
+}
+
+@media (min-width: 768px) {
+  .card-open {
+    height: 309px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-open {
+    height: 280px;
+    width: 28%;
+  }
+}
+
+.card-close {
+  height: 100px;
+  width: 100%;
+  --tw-bg-opacity: 1;
+  background-color: rgb(25 25 25 / var(--tw-bg-opacity, 1));
+}
+
+@media (min-width: 640px) {
+  .card-close {
+    height: 350px;
+    width: 84px;
+  }
+}
+
+@media (min-width: 768px) {
+  .card-close {
+    height: 309px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-close {
+    height: 280px;
+    width: 144px;
   }
 }
 
@@ -613,22 +663,44 @@ video {
   display: flex;
   width: 100%;
   flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
   gap: 5px;
 }
 
 @media (min-width: 640px) {
   .card-top {
     flex-direction: column;
-    align-items: flex-start;
   }
 }
 
 @media (min-width: 1024px) {
   .card-top {
     flex-direction: row;
+  }
+}
+
+.card-top-open {
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+@media (min-width: 1024px) {
+  .card-top-open {
     align-items: center;
+  }
+}
+
+.card-top-close {
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+@media (min-width: 640px) {
+  .card-top-close {
+    justify-content: center;
+    padding-left: 0px;
+    padding-right: 0px;
   }
 }
 
@@ -640,8 +712,6 @@ video {
 .passo-top {
   border-radius: 14px;
   border-width: 1px;
-  --tw-border-opacity: 1;
-  border-color: rgb(0 0 0 / var(--tw-border-opacity, 1));
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 15px;
@@ -650,8 +720,6 @@ video {
   font-size: 11px;
   font-weight: 400;
   text-transform: uppercase;
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity, 1));
 }
 
 @media (min-width: 768px) {
@@ -742,36 +810,6 @@ video {
   }
 }
 
-.card-open {
-  width: 100%;
-  --tw-bg-opacity: 1;
-  background-color: rgb(216 250 45 / var(--tw-bg-opacity, 1));
-  transition-property: all;
-  transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-@media (min-width: 640px) {
-  .card-open {
-    width: 28%;
-  }
-}
-
-.card-close {
-  width: 100%;
-  --tw-bg-opacity: 1;
-  background-color: rgb(25 25 25 / var(--tw-bg-opacity, 1));
-  transition-property: all;
-  transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-@media (min-width: 640px) {
-  .card-close {
-    width: 15%;
-  }
-}
-
 .card-num-open {
   font-size: 33px;
   --tw-text-opacity: 1;
@@ -797,10 +835,24 @@ video {
 
 .passo-t-open {
   display: block;
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity, 1));
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity, 1));
 }
 
 .passo-t-close {
-  display: none;
+  display: block;
+  --tw-border-opacity: 1;
+  border-color: rgb(137 137 137 / var(--tw-border-opacity, 1));
+  --tw-text-opacity: 1;
+  color: rgb(137 137 137 / var(--tw-text-opacity, 1));
+}
+
+@media (min-width: 640px) {
+  .passo-t-close {
+    display: none;
+  }
 }
 
 .card-txt-open {
@@ -816,7 +868,13 @@ video {
 }
 
 .passo-f-close {
-  display: flex;
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .passo-f-close {
+    display: flex;
+  }
 }
 
 .sr-only {
@@ -2634,6 +2692,10 @@ video {
   padding-top: 70px;
 }
 
+.pt-\[7\] {
+  padding-top: 7;
+}
+
 .text-left {
   text-align: left;
 }
@@ -3524,6 +3586,10 @@ video {
   .sm\:py-\[100px\] {
     padding-top: 100px;
     padding-bottom: 100px;
+  }
+
+  .sm\:pt-\[150px\] {
+    padding-top: 150px;
   }
 
   .sm\:leading-none {

@@ -414,7 +414,7 @@
       </div>
     </section>
 
-    <section id="processos" class="max-w-screen-x container mx-auto pt-[150px] flex flex-col items-center gap-[70px]">
+    <section id="processos" class="max-w-screen-x container mx-auto sm:pt-[150px] pt-[70px] flex flex-col items-center gap-[70px]">
       <div class="flex flex-col items-center mx-[15px] gap-[80px]">
         <div class="flex flex-col items-center gap-[20px]">
           <h2 class="font-roobert font-normal md:text-[32px] text-[25px] text-white text-center">Conheça nosso <span class="text-primary-1">processo de criação</span></h2>
@@ -424,7 +424,7 @@
         <div class="w-[100%] flex sm:flex-row flex-col gap-[7px] container lg:max-w-screen-lg md:max-w-screen-md sm:max-w-screen-sm mx-auto justify-center">
 
           <div class="card card-open">
-            <div class="card-top">
+            <div class="card-top card-top-open">
               <div class="card-num-bg-open"><span class="card-num-open card-num">01</span></div>
               <span class="passo-t-open passo-top">passo 1</span>
             </div>
@@ -438,7 +438,7 @@
           </div>
 
           <div class="card-close card">
-            <div class="card-top">
+            <div class="card-top card-top-close">
               <div class="card-num-bg-close"><span class="card-num-close card-num">02</span></div>
               <span class="passo-t-close passo-top">passo 2</span>
             </div>
@@ -452,7 +452,7 @@
           </div>
 
           <div class="card-close card">
-            <div class="card-top">
+            <div class="card-top card-top-close">
               <div class="card-num-bg-close"><span class="card-num-close card-num">03</span></div>
               <span class="passo-t-close passo-top">passo 3</span>
             </div>
@@ -466,7 +466,7 @@
           </div>
 
           <div class="card-close card">
-            <div class="card-top">
+            <div class="card-top card-top-close">
               <div class="card-num-bg-close"><span class="card-num-close card-num">04</span></div>
               <span class="passo-t-close passo-top">passo 4</span>
             </div>
@@ -480,13 +480,13 @@
           </div>
 
           <div class="card-close card">
-            <div class="card-top">
+            <div class="card-top card-top-close">
               <div class="card-num-bg-close"><span class="card-num-close card-num">05</span></div>
               <span class="passo-t-close passo-top">passo 5</span>
             </div>
             <div class="card-txt-close card-txt">
               <h4 class="card-txt-contato">Contato</h4>
-              <p class="fcard-txt-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa.</p>
+              <p class="card-txt-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa.</p>
             </div>
             <div class="passo-f-close passo-foot">
               <span class="card-passo-foot">passo 5</span>
@@ -494,7 +494,7 @@
           </div>
 
           <div class="card-close card">
-            <div class="card-top">
+            <div class="card-top card-top-close">
               <div class="card-num-bg-close"><span class="card-num-close card-num">06</span></div>
               <span class="passo-t-close passo-top">passo 6</span>
             </div>
@@ -812,7 +812,8 @@
         'passo-t-',
         'card-txt-',
         'passo-f-',
-        'card-num-bg-'
+        'card-num-bg-',
+        'card-top-'
       ];
 
       relatedClasses.forEach(baseClass => {
