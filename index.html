@@ -13,7 +13,14 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="https://unpkg.com/split-type"></script>
 
-  <script src="carrossel.js"></script>
+  <script src="./scripts/carrossel.js" defer></script>
+  <script src="./scripts/lines.js" defer></script>
+  <script src="./scripts/activeLinks.js" defer></script>
+  <script src="./scripts/animatedText.js" defer></script>
+  <script src="./scripts/sanfona.js" defer></script>
+  <script src="./scripts/passos.js" defer></script>
+  <script src="./scripts/menu.js" defer></script>
+  <script src="./scripts/maquinaEscrever.js" defer></script>
 
   <title>RNW</title>
 
@@ -32,14 +39,6 @@
         border-radius: 10px;
         margin-left: -5px;
 
-    }
-
-    .menu-hidden {
-      transform: translateX(100%);
-    }
-    
-    .menu-visible {
-      transform: translateX(0);
     }
 
     .typing {
@@ -63,64 +62,64 @@
     50% {
       transform: translateY(20px);
     }
-  }
+    }
 
-  .arrow-down {
-    animation: float 2s infinite ease-in-out;
-  }
-  
-  .hover-line {
-    position: relative;
-    overflow: hidden; /* Para esconder a linha fora dos limites do container */
-  }
-  
-  .hover-line::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: -200%;
-    width: 200%;
-    height: 20px; /* Espessura da linha */
-    background-color: #ffffff09; /* Cor da linha */
-    transform: rotate(-45deg); /* Define a linha na diagonal */
-    transition: all 1s ease;
-    z-index: 0; /* Certifique-se de que a linha está atrás do conteúdo */
-  }
-  
-  .hover-line:hover::before {
-    left: 200%; /* Move a linha para atravessar o centro do container */
-    transform: translateX(-50%) rotate(-45deg);
-  }
+    .arrow-down {
+      animation: float 2s infinite ease-in-out;
+    }
+    
+    .hover-line {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hover-line::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -200%;
+      width: 200%;
+      height: 20px;
+      background-color: #ffffff09;
+      transform: rotate(-45deg);
+      transition: all 1s ease;
+      z-index: 0;
+    }
+    
+    .hover-line:hover::before {
+      left: 200%;
+      transform: translateX(-50%) rotate(-45deg);
+    }
 
-  .hover-line > * {
-    position: relative; /* Coloca o conteúdo acima da linha */
-    z-index: 1;
-  }
-  
-  .carousel-item {
-    flex: 0 0 33.33%; /* Cada item ocupa um terço do container */
-    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-  }
-  
-  .shadow-overlay::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at top left, rgba(255, 255, 255, 0) 85%, rgba(255, 255, 255, 1) 100%),
-    radial-gradient(circle at top right, rgba(255, 255, 255, 0) 85%, rgba(255, 255, 255, 1) 100%),
-    radial-gradient(circle at bottom left, rgba(255, 255, 255, 0) 85%, rgba(255, 255, 255, 1) 100%),
-    radial-gradient(circle at bottom right, rgba(255, 255, 255, 0) 85%, rgba(255, 255, 255, 1) 100%);
-    background-blend-mode: lighten;
-    pointer-events: none;
-    z-index: 1;
-  }
-  
-  .gradiente-gray {
-    background: linear-gradient(to right, #050505, transparent, #050505);
-  }
+    .hover-line > * {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .carousel-item {
+      flex: 0 0 33.33%;
+      transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    }
+    
+    .shadow-overlay::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at top left, rgba(255, 255, 255, 0) 85%, rgba(255, 255, 255, 1) 100%),
+      radial-gradient(circle at top right, rgba(255, 255, 255, 0) 85%, rgba(255, 255, 255, 1) 100%),
+      radial-gradient(circle at bottom left, rgba(255, 255, 255, 0) 85%, rgba(255, 255, 255, 1) 100%),
+      radial-gradient(circle at bottom right, rgba(255, 255, 255, 0) 85%, rgba(255, 255, 255, 1) 100%);
+      background-blend-mode: lighten;
+      pointer-events: none;
+      z-index: 1;
+    }
+    
+    .gradiente-gray {
+      background: linear-gradient(to right, #050505, transparent, #050505);
+    }
   </style>
 </head>
 <body class="bg-gray-2 overflow-x-hidden">
@@ -135,10 +134,10 @@
           <span class="block w-6 h-0.5 bg-gray-5"></span>
         </button>
         <div id="menu" class="hidden lg:flex flex-row gap-[30px] items-center">
-          <a href="#home" class="font-roobert font-normal text-[16px] text-white hover:text-white transition-colors duration-300">Home</a>
-          <a href="#projetos" class="font-roobert font-normal text-[16px] text-gray-5 hover:text-white transition-colors duration-300">Nossos projetos</a>
-          <a href="#oferta" class="font-roobert font-normal text-[16px] text-gray-5 hover:text-white transition-colors duration-300">O que oferecemos</a>
-          <a href="#processos" class="font-roobert font-normal text-[16px] text-gray-5 hover:text-white transition-colors duration-300">Processos</a>
+          <a href="#home" class="link-nav text-white">Home</a>
+          <a href="#projetos" class="link-nav text-gray-5">Nossos projetos</a>
+          <a href="#oferta" class="link-nav text-gray-5">O que oferecemos</a>
+          <a href="#processos" class="link-nav text-gray-5">Processos</a>
           <button class="font-roobert font-medium text-[16px] text-gray-2 hover:bg-primary-1 transition-colors duration-300 px-[20px] py-[10px] bg-white rounded-[32px]">Entre em contato</button>
         </div>
       </div>
@@ -573,238 +572,5 @@
       <div class="lg:mt-[-100px] md:mt-[-50px]"><img src="img/bg-footer.png" alt="Imagem Footer" class="xl:w-[100%] lg:w-[80%] md:w-[70%] sm:w-[60%] w-[50%] xl:ml-[15%] lg:ml-[25%] md:ml-[40%] sm:ml-[20%] ml-[25%]"></div>
     </div>
   </footer>
-
-  <script>
-    //menu
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const menuClose = document.getElementById('menu-close');
-    const menuLinks = mobileMenu.querySelectorAll('a');
-
-    menuToggle.addEventListener('click', () => {
-      if (mobileMenu.classList.contains('menu-hidden')) {
-        mobileMenu.classList.remove('menu-hidden');
-        mobileMenu.classList.add('menu-visible');
-      } else {
-        mobileMenu.classList.add('menu-hidden');
-        mobileMenu.classList.remove('menu-visible');
-      }
-    });
-
-    menuClose.addEventListener('click', () => {
-      mobileMenu.classList.add('menu-hidden');
-      mobileMenu.classList.remove('menu-visible');
-    });
-
-    menuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('menu-hidden');
-        mobileMenu.classList.remove('menu-visible');
-      });
-    });
-  </script>
-
-  <script>
-    //efeito maquina de escrever
-    const words = ["Visão Estratégica", "Qualidade", "Profissionalismo", "Personalidade"];
-    const dynamicText = document.getElementById('dynamic-text');
-    let wordIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    let delayAfterWord = 800;
-
-    function typeEffect() {
-      const currentWord = words[wordIndex];
-      const visibleText = currentWord.substring(0, charIndex);
-
-      dynamicText.textContent = visibleText;
-
-      if (!isDeleting && charIndex < currentWord.length) {
-        charIndex++;
-      } else if (isDeleting && charIndex > 0) {
-        charIndex--;
-      } else {
-        if (!isDeleting) {
-          setTimeout(() => {
-            isDeleting = true;
-            typeEffect();
-          }, delayAfterWord);
-          return;
-        } else {
-          isDeleting = false;
-          wordIndex = (wordIndex + 1) % words.length;
-        }
-      }
-
-      setTimeout(typeEffect, isDeleting ? 70 : 150);
-    }
-
-    typeEffect();
-  </script>
-
-  <script>
-    const sections = document.querySelectorAll("section, header"); // Incluímos o header aqui
-    const navLinks = document.querySelectorAll("nav a");
-
-    function updateActiveLink() {
-      let currentSectionId = "";
-
-      // Verifica qual seção está no centro da viewport
-      sections.forEach((section) => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-          currentSectionId = section.id;
-        }
-      });
-
-      // Atualiza os links com base na seção visível
-      navLinks.forEach((link) => {
-        if (link.getAttribute("href") === `#${currentSectionId}`) {
-          link.classList.add("text-white");
-          link.classList.remove("text-gray-5");
-        } else {
-          link.classList.remove("text-white");
-          link.classList.add("text-gray-5");
-        }
-      });
-    }
-
-    // Chama a função ao rolar a página e ao carregar
-    window.addEventListener("scroll", updateActiveLink);
-    window.addEventListener("DOMContentLoaded", updateActiveLink);
-  </script>
-
-  <script>
-    //efeito scroll
-    gsap.to(".row1", {
-      x: "50%",
-      scrollTrigger: {
-        trigger: ".row1",
-        start: "top bottom",
-        end: "bottom top",
-        scrub: true, 
-      },
-    });
-
-    gsap.to(".row2", {
-      x: "-50%",
-      scrollTrigger: {
-        trigger: ".row2",
-        start: "top bottom", 
-        end: "bottom top",   
-        scrub: true,
-      },
-    });
-  </script>
-
-  <script>
-    // texto animado
-    gsap.registerPlugin(ScrollTrigger);
-
-    const splitTypes = document.querySelectorAll('.scroll-highlight');
-    splitTypes.forEach((char, i) => {
-      const text = new SplitType(char, { types: ['chars', 'words'] });
-      gsap.fromTo(
-        text.chars,
-        { color: "#202020" }, // Cor inicial do texto
-        {
-          color: "#D1D1D1", // Cor final do texto
-          scrollTrigger: {
-            trigger: char,
-            start: "top 90%",
-            end: () => window.innerWidth < 640 ? "top 10%" : "top 30%",
-            scrub: true,
-          },
-          stagger: 0.1,
-        }
-      );
-    });
-
-  </script>
-
-  <script>
-    //sanfona
-    function toggleVisibility(element) {
-      const paragraph = element.querySelector(".sanfona-texto-close, .sanfona-texto-open");
-
-      if (paragraph) {
-        if (paragraph.classList.contains("sanfona-texto-close")) {
-          paragraph.classList.add("sanfona-texto-open");
-          paragraph.classList.remove("sanfona-texto-close");
-        } else {
-          paragraph.classList.add("sanfona-texto-close");
-          paragraph.classList.remove("sanfona-texto-open");
-        }
-      }
-
-      const seta = element.querySelector(".sanfona-seta-close, .sanfona-seta-open");
-
-      if (seta) {
-        if (seta.classList.contains("sanfona-seta-close")) {
-          seta.classList.add("sanfona-seta-open");
-          seta.classList.remove("sanfona-seta-close");
-        } else {
-          seta.classList.add("sanfona-seta-close");
-          seta.classList.remove("sanfona-seta-open");
-        }
-      }
-    }
-  </script>
-
-  <script>
-    //cartões de passos
-    const cards = document.querySelectorAll('.card-open, .card-close');
-
-    cards.forEach(card => {
-      card.addEventListener('click', () => {
-        cards.forEach(otherCard => {
-          if (otherCard !== card && otherCard.classList.contains('card-open')) { 
-            setTimeout(() => {
-              otherCard.classList.remove('card-open');
-              otherCard.classList.add('card-close');
-              toggleRelatedClasses(otherCard, 'open', 'close');
-            }, 500);
-          }
-        });
-
-        if (card.classList.contains('card-open')) {
-          setTimeout(() => {
-            card.classList.remove('card-open');
-            card.classList.add('card-close');
-            toggleRelatedClasses(card, 'open', 'close');
-          }, 500);
-        } else if (card.classList.contains('card-close')) {
-          setTimeout(() => {
-            card.classList.remove('card-close');
-            card.classList.add('card-open');
-            toggleRelatedClasses(card, 'close', 'open');
-          }, 500);
-        }
-      });
-    });
-
-    function toggleRelatedClasses(card, from, to) {
-      const relatedClasses = [
-        'card-num-',
-        'passo-t-',
-        'card-txt-',
-        'passo-f-',
-        'card-num-bg-',
-        'card-top-'
-      ];
-
-      relatedClasses.forEach(baseClass => {
-        const elements = card.querySelectorAll(`[class*="${baseClass}${from}"]`);
-        elements.forEach(element => {
-          const currentClass = element.className.match(new RegExp(`${baseClass}${from}`));
-          if (currentClass) {
-            const newClass = currentClass[0].replace(from, to);
-            element.classList.remove(currentClass[0]);
-            element.classList.add(newClass);
-          }
-        });
-      });
-    }
-  </script>
 </body>
-</
+</html>
