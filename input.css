@@ -180,3 +180,9 @@
       @apply font-roobert font-normal text-[16px] hover:text-white transition-colors duration-300;
     }
   }
+
+  @layer components {
+    .carrossel-img {
+      @apply sm:mt-[-40px] mt-[-25px] scale-[0.85] opacity-70 md:max-w-[100%] max-w-[82%];
+    }
+  }
