@@ -13,6 +13,8 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="https://unpkg.com/split-type"></script>
 
+  <script src="carrossel.js"></script>
+
   <title>RNW</title>
 
   <!--npx tailwindcss -i ./input.css -o ./output.css --watch-->
@@ -32,14 +34,10 @@
 
     }
 
-    .menu-slide {
-      transition: transform 0.3s ease-in-out;
-    }
-
     .menu-hidden {
       transform: translateX(100%);
     }
-
+    
     .menu-visible {
       transform: translateX(0);
     }
@@ -57,7 +55,7 @@
     @keyframes blink {
       50% { border-color: transparent; }
     }
-
+    
     @keyframes float {
     0%, 100% {
       transform: translateY(0);
@@ -70,12 +68,12 @@
   .arrow-down {
     animation: float 2s infinite ease-in-out;
   }
-
-    .hover-line {
+  
+  .hover-line {
     position: relative;
     overflow: hidden; /* Para esconder a linha fora dos limites do container */
   }
-
+  
   .hover-line::before {
     content: '';
     position: absolute;
@@ -88,7 +86,7 @@
     transition: all 1s ease;
     z-index: 0; /* Certifique-se de que a linha está atrás do conteúdo */
   }
-
+  
   .hover-line:hover::before {
     left: 200%; /* Move a linha para atravessar o centro do container */
     transform: translateX(-50%) rotate(-45deg);
@@ -98,12 +96,12 @@
     position: relative; /* Coloca o conteúdo acima da linha */
     z-index: 1;
   }
-
+  
   .carousel-item {
     flex: 0 0 33.33%; /* Cada item ocupa um terço do container */
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
   }
-
+  
   .shadow-overlay::before {
     content: '';
     position: absolute;
@@ -112,14 +110,14 @@
     width: 100%;
     height: 100%;
     background: radial-gradient(circle at top left, rgba(255, 255, 255, 0) 85%, rgba(255, 255, 255, 1) 100%),
-                radial-gradient(circle at top right, rgba(255, 255, 255, 0) 85%, rgba(255, 255, 255, 1) 100%),
-                radial-gradient(circle at bottom left, rgba(255, 255, 255, 0) 85%, rgba(255, 255, 255, 1) 100%),
-                radial-gradient(circle at bottom right, rgba(255, 255, 255, 0) 85%, rgba(255, 255, 255, 1) 100%);
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0) 85%, rgba(255, 255, 255, 1) 100%),
+    radial-gradient(circle at bottom left, rgba(255, 255, 255, 0) 85%, rgba(255, 255, 255, 1) 100%),
+    radial-gradient(circle at bottom right, rgba(255, 255, 255, 0) 85%, rgba(255, 255, 255, 1) 100%);
     background-blend-mode: lighten;
     pointer-events: none;
     z-index: 1;
   }
-
+  
   .gradiente-gray {
     background: linear-gradient(to right, #050505, transparent, #050505);
   }
@@ -147,7 +145,7 @@
     </div>
   </nav>
 
-  <div id="mobile-menu" class="fixed top-0 right-0 w-screen h-screen bg-black menu-slide menu-hidden lg:hidden z-30">
+  <div id="mobile-menu" class="fixed top-0 right-0 w-screen h-screen bg-black transition-transform duration-300 ease-in-out menu-hidden lg:hidden z-30">
     <button id="menu-close" class="absolute top-4 right-4 text-white text-3xl focus:outline-none">&times;</button>
     <div class="flex flex-col items-center justify-center h-full gap-[4%]">
       <a href="#home"><img src="img/logo-nav.svg" alt="" class="md:scale-100 scale-75"></a>
@@ -674,51 +672,6 @@
     // Chama a função ao rolar a página e ao carregar
     window.addEventListener("scroll", updateActiveLink);
     window.addEventListener("DOMContentLoaded", updateActiveLink);
-  </script>
-
-  <script>
-    // carrosssel
-    document.addEventListener("DOMContentLoaded", () => {
-    const carousel = document.querySelector(".carousel");
-    const items = Array.from(document.querySelectorAll(".carousel-item"));
-    let isTransitioning = false;
-
-    const updateClasses = () => {
-      items.forEach((item, index) => {
-        if (index === 1) {
-          item.classList.add("scale-[1]", "opacity-100");
-          item.classList.remove("scale-[0.85]", "opacity-70");
-        } else {
-          item.classList.add("scale-[0.85]", "opacity-70");
-          item.classList.remove("scale-[1]", "opacity-100");
-        }
-      });
-    };
-
-    const moveCarousel = () => {
-      if (isTransitioning) return;
-      isTransitioning = true;
-
-      carousel.style.transition = "transform 0.5s ease-in-out";
-      carousel.style.transform = "translateX(-33.33%)";
-
-      setTimeout(() => {
-        carousel.style.transition = "none";
-        carousel.style.transform = "translateX(0)";
-
-        const firstItem = items.shift();
-        items.push(firstItem);
-        carousel.appendChild(firstItem);
-
-        updateClasses();
-        isTransitioning = false;
-      }, 500);
-    };
-
-    updateClasses();
-
-    setInterval(moveCarousel, 3000);
-  });
   </script>
 
   <script>

@@ -164,7 +164,3 @@
       @apply font-roobert font-normal md:text-[16px] text-[14px] text-gray-13 transition-all duration-500 ease-in-out max-h-[200px] overflow-hidden opacity-100;
     }
   }
-
-  @layer components {
-    
-  }
