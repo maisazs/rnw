@@ -877,6 +877,122 @@ video {
   }
 }
 
+.sanfona {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  width: 100%;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-bottom-width: 1px;
+  --tw-border-opacity: 1;
+  border-bottom-color: rgb(43 43 43 / var(--tw-border-opacity, 1));
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.sanfona-cont {
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 5px;
+}
+
+.sanfona-titulo {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.sanfona-h4 {
+  font-family: Roobert, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.sanfona-h4:hover {
+  --tw-text-opacity: 1;
+  color: rgb(209 209 209 / var(--tw-text-opacity, 1));
+}
+
+@media (min-width: 768px) {
+  .sanfona-h4 {
+    font-size: 16px;
+  }
+}
+
+.sanfona-seta-close {
+  --tw-rotate: 90deg;
+  --tw-scale-x: 40%;
+  --tw-scale-y: 40%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+}
+
+.sanfona-seta-open {
+  --tw-rotate: 0deg;
+  --tw-scale-x: 40%;
+  --tw-scale-y: 40%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+}
+
+.sanfona-texto-close {
+  max-height: 0px;
+  overflow: hidden;
+  font-family: Roobert, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  --tw-text-opacity: 1;
+  color: rgb(122 122 122 / var(--tw-text-opacity, 1));
+  opacity: 0;
+  transition-property: all;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 768px) {
+  .sanfona-texto-close {
+    font-size: 16px;
+  }
+}
+
+.sanfona-texto-open {
+  max-height: 200px;
+  overflow: hidden;
+  font-family: Roobert, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  --tw-text-opacity: 1;
+  color: rgb(122 122 122 / var(--tw-text-opacity, 1));
+  opacity: 1;
+  transition-property: all;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 768px) {
+  .sanfona-texto-open {
+    font-size: 16px;
+  }
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -1201,12 +1317,12 @@ video {
   height: 180px;
 }
 
-.h-\[384px\] {
-  height: 384px;
+.h-\[300px\] {
+  height: 300px;
 }
 
-.h-\[486px\] {
-  height: 486px;
+.h-\[384px\] {
+  height: 384px;
 }
 
 .h-\[71px\] {
@@ -1219,14 +1335,6 @@ video {
 
 .h-screen {
   height: 100vh;
-}
-
-.max-h-0 {
-  max-height: 0px;
-}
-
-.max-h-\[200px\] {
-  max-height: 200px;
 }
 
 .w-6 {
@@ -1251,10 +1359,6 @@ video {
 
 .w-\[70\%\] {
   width: 70%;
-}
-
-.w-\[90\%\] {
-  width: 90%;
 }
 
 .w-\[96\%\] {
@@ -2329,10 +2433,6 @@ video {
   border-bottom-width: 1px;
 }
 
-.border-b-\[1px\] {
-  border-bottom-width: 1px;
-}
-
 .border-e {
   border-inline-end-width: 1px;
 }
@@ -2380,11 +2480,6 @@ video {
 .border-gray-4 {
   --tw-border-opacity: 1;
   border-color: rgb(17 17 17 / var(--tw-border-opacity, 1));
-}
-
-.border-b-gray-14 {
-  --tw-border-opacity: 1;
-  border-bottom-color: rgb(43 43 43 / var(--tw-border-opacity, 1));
 }
 
 .bg-\[rgb\(255\2c 0\2c 0\)\] {
@@ -2627,9 +2722,9 @@ video {
   padding-right: 40px;
 }
 
-.px-\[85px\] {
-  padding-left: 85px;
-  padding-right: 85px;
+.px-\[60px\] {
+  padding-left: 60px;
+  padding-right: 60px;
 }
 
 .py-\[10px\] {
@@ -2645,16 +2740,6 @@ video {
 .py-\[13px\] {
   padding-top: 13px;
   padding-bottom: 13px;
-}
-
-.py-\[150px\] {
-  padding-top: 150px;
-  padding-bottom: 150px;
-}
-
-.py-\[25px\] {
-  padding-top: 25px;
-  padding-bottom: 25px;
 }
 
 .py-\[50px\] {
@@ -2674,6 +2759,14 @@ video {
 
 .pb-\[100px\] {
   padding-bottom: 100px;
+}
+
+.pb-\[80px\] {
+  padding-bottom: 80px;
+}
+
+.pt-\[0px\] {
+  padding-top: 0px;
 }
 
 .pt-\[10\%\] {
@@ -2877,8 +2970,8 @@ video {
   font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction);
 }
 
-.leading-\[24px\] {
-  line-height: 24px;
+.leading-\[20px\] {
+  line-height: 20px;
 }
 
 .leading-\[50px\] {
@@ -2997,10 +3090,6 @@ video {
 .subpixel-antialiased {
   -webkit-font-smoothing: auto;
   -moz-osx-font-smoothing: auto;
-}
-
-.opacity-0 {
-  opacity: 0;
 }
 
 .opacity-100 {
@@ -3497,11 +3586,6 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
-.hover\:text-white-3:hover {
-  --tw-text-opacity: 1;
-  color: rgb(209 209 209 / var(--tw-text-opacity, 1));
-}
-
 .hover\:underline:hover {
   text-decoration-line: underline;
 }
@@ -3561,12 +3645,20 @@ video {
     height: 200px;
   }
 
+  .sm\:h-\[486px\] {
+    height: 486px;
+  }
+
   .sm\:w-\[25\%\] {
     width: 25%;
   }
 
   .sm\:w-\[60\%\] {
     width: 60%;
+  }
+
+  .sm\:max-w-\[500px\] {
+    max-width: 500px;
   }
 
   .sm\:max-w-screen-sm {
@@ -3591,6 +3683,10 @@ video {
     gap: 0px;
   }
 
+  .sm\:gap-\[100px\] {
+    gap: 100px;
+  }
+
   .sm\:gap-\[15px\] {
     gap: 15px;
   }
@@ -3599,9 +3695,18 @@ video {
     gap: 50px;
   }
 
+  .sm\:px-\[85px\] {
+    padding-left: 85px;
+    padding-right: 85px;
+  }
+
   .sm\:py-\[100px\] {
     padding-top: 100px;
     padding-bottom: 100px;
+  }
+
+  .sm\:pb-\[150px\] {
+    padding-bottom: 150px;
   }
 
   .sm\:pt-\[150px\] {
@@ -3610,6 +3715,18 @@ video {
 
   .sm\:text-start {
     text-align: start;
+  }
+
+  .sm\:text-\[16px\] {
+    font-size: 16px;
+  }
+
+  .sm\:text-\[32px\] {
+    font-size: 32px;
+  }
+
+  .sm\:leading-\[24px\] {
+    line-height: 24px;
   }
 
   .sm\:leading-none {
