@@ -99,7 +99,7 @@
     }
   
     .card-num-bg-close {
-      @apply bg-gray-19 p-[15px] rounded-[50%];
+      @apply bg-gray-19 h-[50px] w-[50px] rounded-[50%] flex justify-center items-center;
     }
 
     .card-num-bg-open {

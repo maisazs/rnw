@@ -832,10 +832,14 @@ video {
 }
 
 .card-num-bg-close {
+  display: flex;
+  height: 50px;
+  width: 50px;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
   --tw-bg-opacity: 1;
   background-color: rgb(45 45 45 / var(--tw-bg-opacity, 1));
-  padding: 15px;
 }
 
 .card-num-bg-open {
@@ -1438,10 +1442,6 @@ video {
   width: 100vw;
 }
 
-.w-\[300\%\] {
-  width: 300%;
-}
-
 .w-\[350px\] {
   width: 350px;
 }
@@ -1476,6 +1476,10 @@ video {
 
 .w-screen {
   width: 100vw;
+}
+
+.max-w-\[1880px\] {
+  max-width: 1880px;
 }
 
 .max-w-\[360px\] {
