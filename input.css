@@ -43,11 +43,11 @@
     }
 
     .card-open {
-      @apply bg-primary-1 lg:w-[28%] sm:w-[40%] w-[100%] px-[30px] lg:h-[280px] md:h-[309px] sm:h-[350px] h-auto;
+      @apply bg-primary-1 sm:hover:bg-[#d8fa2de7] lg:w-[28%] sm:w-[40%] w-[100%] px-[30px] lg:h-[280px] md:h-[309px] sm:h-[350px] h-auto;
     }
   
     .card-close {
-      @apply bg-gray-18 lg:w-[144px] sm:w-[84px] w-[100%] lg:h-[280px] md:h-[309px] sm:h-[350px] h-[100px];
+      @apply bg-gray-18 sm:hover:bg-[#222222] lg:w-[144px] sm:w-[84px] w-[100%] lg:h-[280px] md:h-[309px] sm:h-[350px] h-[100px];
     }
 
     .card-top {
@@ -184,5 +184,11 @@
   @layer components {
     .carrossel-img {
       @apply sm:mt-[-40px] mt-[-25px] scale-[0.85] opacity-70 md:max-w-[100%] max-w-[82%];
+    }
+  }
+
+  @layer components {
+    .why-card {
+      @apply relative bg-gray-8 sm:hover:bg-gray-3 rounded-[14px] px-[40px] py-[55px] sm:hover:scale-[102%] sm:group-hover:not-hover:blur-sm sm:group-hover:not-hover:scale-[98%] transition-all duration-300 mx-auto max-w-[350px];
     }
   }
