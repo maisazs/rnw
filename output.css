@@ -2960,26 +2960,6 @@ video {
   font-size: 45px;
 }
 
-.text-\[37px\] {
-  font-size: 37px;
-}
-
-.text-\[35px\] {
-  font-size: 35px;
-}
-
-.text-\[20px\] {
-  font-size: 20px;
-}
-
-.text-\[39px\] {
-  font-size: 39px;
-}
-
-.text-\[40px\] {
-  font-size: 40px;
-}
-
 .font-bold {
   font-weight: 700;
 }
@@ -3138,10 +3118,6 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-
-.text-\[\] {
-  color: ;
 }
 
 .underline {
